@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity FPAdder_Control is
+port();
+end entity;
+
+architecture rtl of FPAdder_Control is
+
+
+
+end rtl;

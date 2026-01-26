@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+--DOES NOT DO CIRCULAR SHIFT, shifts in 0 
+
+entity gen_RightShiftRegister is
+	generic(WIDTH : positive := 9)
+	port(i_clk : in std_logic;
+		i_reset : in std_logic;
+		i_load : in std_logic;
+		i_d : in std_logic_vector(WIDTH-1 downto 0);
+		i_q : out std_logic_vector(WIDTH-1 downto 0));
+end gen_RightShiftRegister;

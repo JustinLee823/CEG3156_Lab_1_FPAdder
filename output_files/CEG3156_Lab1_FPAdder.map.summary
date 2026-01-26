@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jan 22 15:44:14 2026
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : CEG3156_Lab1_FPAdder
+Top-level Entity Name : mux2to1_Nbit
+Family : Cyclone IV E
+Total logic elements : 8
+    Total combinational functions : 8
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 25
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

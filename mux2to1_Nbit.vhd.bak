@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity mux2to1_Nbit is
+	generic(WIDTH : integer := 8);
+	port(
+		i_0, i_1 : in std_logic_vector(WIDTH-1 downto 0);
+		i_sel : in std_logic;
+		o_y : out std_logic_vector(WIDTH-1 downto 0));
+end entity;
+
+architecture rtl of mux2to1_Nbit is
