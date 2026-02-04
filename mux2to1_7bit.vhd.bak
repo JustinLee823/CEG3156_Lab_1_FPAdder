@@ -1,0 +1,80 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY mux2to1_8bit IS
+    PORT(
+        i_0   : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
+        i_1   : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
+        i_sel : IN  STD_LOGIC;
+        o_y   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+    );
+END mux2to1_8bit;
+
+ARCHITECTURE structural OF mux2to1_8bit IS
+
+    COMPONENT mux2to1_1bit 
+        PORT(
+            i_0   : IN  STD_LOGIC;
+            i_1   : IN  STD_LOGIC;
+            i_sel : IN  STD_LOGIC;
+            o_y   : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+BEGIN
+
+   mux0: mux2to1_1bit
+        PORT MAP (
+            i_0   => i_0(0),
+            i_1   => i_1(0),
+            i_sel => i_sel,
+            o_y   => o_y(0)
+        );
+
+   mux1: mux2to1_1bit
+        PORT MAP (
+            i_0   => i_0(1),
+            i_1   => i_1(1),
+            i_sel => i_sel,
+            o_y   => o_y(1)
+        );
+
+   mux2: mux2to1_1bit
+        PORT MAP (
+            i_0   => i_0(2),
+            i_1   => i_1(2),
+            i_sel => i_sel,
+            o_y   => o_y(2)
+        );
+
+   mux3: mux2to1_1bit
+        PORT MAP (
+            i_0   => i_0(3),
+            i_1   => i_1(3),
+            i_sel => i_sel,
+            o_y   => o_y(3)
+        );
+		
+	mux4: mux2to1_1bit
+        PORT MAP (
+            i_0   => i_0(4),
+            i_1   => i_1(4),
+            i_sel => i_sel,
+            o_y   => o_y(4)
+        );
+
+	mux5: mux2to1_1bit
+        PORT MAP (
+            i_0   => i_0(5),
+            i_1   => i_1(5),
+            i_sel => i_sel,
+            o_y   => o_y(5));
+		
+	mux6: mux2to1_1bit
+        PORT MAP (
+            i_0   => i_0(6),
+            i_1   => i_1(6),
+            i_sel => i_sel,
+            o_y   => o_y(6)
+        );
+END structural;

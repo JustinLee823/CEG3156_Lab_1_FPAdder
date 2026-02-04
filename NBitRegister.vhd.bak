@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity NBitRegister is
+	generic(WIDTH := integer = 8);
+	port(
+		i_clock, i_reset, i_load : in std_logic;
+		i_value : in std_logic_vector(WIDTH-1 downto 0);
+		o_value : out std_logic_vector(WIDTH-1 downto 0));
+end entity;
+
+architecture rtl of NBitRegister is
+
+	component 
+
+begin
+	gen_bits : for i in 0 to WIDTH-1 generate
+	
+
+end rtl;

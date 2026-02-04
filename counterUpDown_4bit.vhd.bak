@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity counterUpDown_4bit is
+port(i_value : in std_logic_vector(3 downto 0);
+	i_resetBar, i_enable, i_inc : in std_logic;
+	o_zero : out std_logic;
+	o_value : out std_logic_vector(3 downto 0));
+end entity;
+
+architecture rtl of counterUpDown_4bit is
+
+	signal int_present, int_next, int_Z : std_logic_vector(3 downto 0);
+	signal int_zero : std_logic;
+
+begin
+
+end rtl;

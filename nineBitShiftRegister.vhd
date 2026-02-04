@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity nineBitShiftRegister is
 port(
-	i_reset, i_clock, i_shiftRight, i_load : in std_logic;
+	i_reset, i_clock, i_shiftRight, i_load, i_clear : in std_logic;
 	i_value : in std_logic_vector(8 downto 0);
 	o_value : out std_logic_vector(8 downto 0));
 end nineBitShiftRegister;
@@ -33,13 +33,13 @@ begin
 	
 	mux2to1_8 : mux2to1_1bit
 	port map(
-		i_0 => i_value(8), --Hold
+		i_0 => '1', --Hold
 		i_1 => '0', --right shift in 0
 		i_sel => i_shiftRight,
 		o_y => int_d(8));
 	dFF8 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(8),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -54,7 +54,7 @@ begin
 		o_y => int_d(7));
 	dFF7 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(7),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -69,7 +69,7 @@ begin
 		o_y => int_d(6));
 	dFF6 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(6),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -84,7 +84,7 @@ begin
 		o_y => int_d(5));
 	dFF5 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(5),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -99,7 +99,7 @@ begin
 		o_y => int_d(4));
 	dFF4 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(4),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -114,7 +114,7 @@ begin
 		o_y => int_d(3));
 	dFF3 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(3),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -129,7 +129,7 @@ begin
 		o_y => int_d(2));
 	dFF2 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(2),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -144,7 +144,7 @@ begin
 		o_y => int_d(1));
 	dFF1 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(1),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,
@@ -159,7 +159,7 @@ begin
 		o_y => int_d(0));
 	dFF0 : enardFF_2
 	port map(
-		i_resetBar => not i_reset,
+		i_resetBar => i_reset and i_clear,
 		i_d => int_d(0),
 		i_enable => i_load or i_shiftRight,
 		i_clock => i_clock,

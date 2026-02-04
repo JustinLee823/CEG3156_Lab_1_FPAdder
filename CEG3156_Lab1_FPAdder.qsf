@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY mux2to1_Nbit
+set_global_assignment -name TOP_LEVEL_ENTITY threeBitDownCounter
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:21:56  JANUARY 19, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
@@ -47,25 +47,53 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE fourBitCounter.vhd
+set_global_assignment -name VHDL_FILE twosComp8Bit.vhd
+set_global_assignment -name VHDL_FILE onebitcomparator.vhd
+set_global_assignment -name VHDL_FILE mux2to1_1bit.vhd
+set_global_assignment -name VHDL_FILE enardFF_2.vhd
+set_global_assignment -name VHDL_FILE eightBitShiftRegister.vhd
+set_global_assignment -name VHDL_FILE nineBitShiftRegister.vhd
 set_global_assignment -name VHDL_FILE CEG3156_Lab1_FPAdder.vhd
 set_global_assignment -name VHDL_FILE FPAdder_Control.vhd
 set_global_assignment -name VHDL_FILE FPAdder_Data.vhd
 set_global_assignment -name VHDL_FILE sevenBitAdder.vhd
 set_global_assignment -name VHDL_FILE twosComp7Bit.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE delete_later.vwf
-set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name VECTOR_WAVEFORM_FILE Exponent_diff_test.vwf
 set_global_assignment -name VHDL_FILE mux2to1_8bit.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Exponent_Sign.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE expo_diff_negative.vwf
 set_global_assignment -name VHDL_FILE gen_RightShiftRegister.vhd
-set_global_assignment -name VHDL_FILE nineBitShiftRegister.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Nine_shift_reg_test.vwf
 set_global_assignment -name VHDL_FILE nineBitAdder.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE nineBitAdderTest.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "H:/CEG3156_Lab1/nineBitAdderTest.vwf"
 set_global_assignment -name VHDL_FILE mux2to1_Nbit.vhd
+set_global_assignment -name VHDL_FILE sevenBitRegister.vhd
+set_global_assignment -name VHDL_FILE eightBitAdder.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Complement_with_enable.vwf
+set_global_assignment -name VHDL_FILE mux2to1_7bit.vhd
+set_global_assignment -name VHDL_FILE twosComp10bit.vhd
+set_global_assignment -name VHDL_FILE mux2to1_10bit.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Complement_10bit.vwf
+set_global_assignment -name VHDL_FILE tenBitAdder.vhd
+set_global_assignment -name VHDL_FILE twosComp10bit_A.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Comp_test.vwf
+set_global_assignment -name VHDL_FILE twosComp10bit_B.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE tenAdderTest.vwf
+set_global_assignment -name VHDL_FILE threeBitCounter.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE downCount.vwf
+set_global_assignment -name VHDL_FILE counterUpDown_4bit.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE updowncounterTest.vwf
+set_global_assignment -name VHDL_FILE sevenBitComparator.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE sevenBitComparator.vwf
+set_global_assignment -name VHDL_FILE fourBitDownCounter.vhd
+set_global_assignment -name VHDL_FILE threeBitDownCounter.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE threeBitDownCount.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "H:/CEG3156_Lab_1_FPAdder/threeBitDownCount.vwf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

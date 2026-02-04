@@ -1,39 +1,26 @@
-|mux2to1_Nbit
-i_0[0] => mux2to1_1bit:gen_bits:0:n_mux.i_0
-i_0[1] => mux2to1_1bit:gen_bits:1:n_mux.i_0
-i_0[2] => mux2to1_1bit:gen_bits:2:n_mux.i_0
-i_0[3] => mux2to1_1bit:gen_bits:3:n_mux.i_0
-i_0[4] => mux2to1_1bit:gen_bits:4:n_mux.i_0
-i_0[5] => mux2to1_1bit:gen_bits:5:n_mux.i_0
-i_0[6] => mux2to1_1bit:gen_bits:6:n_mux.i_0
-i_0[7] => mux2to1_1bit:gen_bits:7:n_mux.i_0
-i_1[0] => mux2to1_1bit:gen_bits:0:n_mux.i_1
-i_1[1] => mux2to1_1bit:gen_bits:1:n_mux.i_1
-i_1[2] => mux2to1_1bit:gen_bits:2:n_mux.i_1
-i_1[3] => mux2to1_1bit:gen_bits:3:n_mux.i_1
-i_1[4] => mux2to1_1bit:gen_bits:4:n_mux.i_1
-i_1[5] => mux2to1_1bit:gen_bits:5:n_mux.i_1
-i_1[6] => mux2to1_1bit:gen_bits:6:n_mux.i_1
-i_1[7] => mux2to1_1bit:gen_bits:7:n_mux.i_1
-i_sel => mux2to1_1bit:gen_bits:0:n_mux.i_sel
-i_sel => mux2to1_1bit:gen_bits:1:n_mux.i_sel
-i_sel => mux2to1_1bit:gen_bits:2:n_mux.i_sel
-i_sel => mux2to1_1bit:gen_bits:3:n_mux.i_sel
-i_sel => mux2to1_1bit:gen_bits:4:n_mux.i_sel
-i_sel => mux2to1_1bit:gen_bits:5:n_mux.i_sel
-i_sel => mux2to1_1bit:gen_bits:6:n_mux.i_sel
-i_sel => mux2to1_1bit:gen_bits:7:n_mux.i_sel
-o_y[0] <= mux2to1_1bit:gen_bits:0:n_mux.o_y
-o_y[1] <= mux2to1_1bit:gen_bits:1:n_mux.o_y
-o_y[2] <= mux2to1_1bit:gen_bits:2:n_mux.o_y
-o_y[3] <= mux2to1_1bit:gen_bits:3:n_mux.o_y
-o_y[4] <= mux2to1_1bit:gen_bits:4:n_mux.o_y
-o_y[5] <= mux2to1_1bit:gen_bits:5:n_mux.o_y
-o_y[6] <= mux2to1_1bit:gen_bits:6:n_mux.o_y
-o_y[7] <= mux2to1_1bit:gen_bits:7:n_mux.o_y
+|threeBitDownCounter
+i_value[0] => mux2to1_1bit:mux0.i_1
+i_value[1] => mux2to1_1bit:mux1.i_1
+i_value[2] => mux2to1_1bit:mux2.i_1
+i_resetBar => enardFF_2:dFF2.i_resetBar
+i_resetBar => enardFF_2:dFF1.i_resetBar
+i_resetBar => enardFF_2:dFF0.i_resetBar
+i_enable => enardFF_2:dFF2.i_enable
+i_enable => enardFF_2:dFF1.i_enable
+i_enable => enardFF_2:dFF0.i_enable
+i_load => mux2to1_1bit:mux2.i_sel
+i_load => mux2to1_1bit:mux1.i_sel
+i_load => mux2to1_1bit:mux0.i_sel
+i_clock => enardFF_2:dFF2.i_clock
+i_clock => enardFF_2:dFF1.i_clock
+i_clock => enardFF_2:dFF0.i_clock
+o_zero <= o_zero.DB_MAX_OUTPUT_PORT_TYPE
+o_Z[0] <= int_next[0].DB_MAX_OUTPUT_PORT_TYPE
+o_Z[1] <= int_next[1].DB_MAX_OUTPUT_PORT_TYPE
+o_Z[2] <= int_next[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:0:n_mux
+|threeBitDownCounter|mux2to1_1bit:mux2
 i_0 => o_y.IN0
 i_1 => o_y.IN0
 i_sel => o_y.IN1
@@ -41,7 +28,16 @@ i_sel => o_y.IN1
 o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:1:n_mux
+|threeBitDownCounter|enARdFF_2:dFF2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|mux2to1_1bit:mux1
 i_0 => o_y.IN0
 i_1 => o_y.IN0
 i_sel => o_y.IN1
@@ -49,7 +45,16 @@ i_sel => o_y.IN1
 o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:2:n_mux
+|threeBitDownCounter|enARdFF_2:dFF1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|mux2to1_1bit:mux0
 i_0 => o_y.IN0
 i_1 => o_y.IN0
 i_sel => o_y.IN1
@@ -57,43 +62,12 @@ i_sel => o_y.IN1
 o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:3:n_mux
-i_0 => o_y.IN0
-i_1 => o_y.IN0
-i_sel => o_y.IN1
-i_sel => o_y.IN1
-o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:4:n_mux
-i_0 => o_y.IN0
-i_1 => o_y.IN0
-i_sel => o_y.IN1
-i_sel => o_y.IN1
-o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:5:n_mux
-i_0 => o_y.IN0
-i_1 => o_y.IN0
-i_sel => o_y.IN1
-i_sel => o_y.IN1
-o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:6:n_mux
-i_0 => o_y.IN0
-i_1 => o_y.IN0
-i_sel => o_y.IN1
-i_sel => o_y.IN1
-o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|mux2to1_Nbit|mux2to1_1bit:\gen_bits:7:n_mux
-i_0 => o_y.IN0
-i_1 => o_y.IN0
-i_sel => o_y.IN1
-i_sel => o_y.IN1
-o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+|threeBitDownCounter|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 

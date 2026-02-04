@@ -1,6 +1,6 @@
 Simulator report for CEG3156_Lab1_FPAdder_qsim
-Thu Jan 22 12:16:07 2026
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Feb 04 14:07:27 2026
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -45,50 +45,50 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 87 nodes     ;
-; Simulation Coverage         ;       0.00 % ;
-; Total Number of Transitions ; 0            ;
+; Simulation Netlist Size     ; 36 nodes     ;
+; Simulation Coverage         ;      83.33 % ;
+; Total Number of Transitions ; 388          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone III  ;
 +-----------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                                                ;
-+--------------------------------------------------------------------------------------------+--------------------------------------+---------------+
-; Option                                                                                     ; Setting                              ; Default Value ;
-+--------------------------------------------------------------------------------------------+--------------------------------------+---------------+
-; Simulation mode                                                                            ; Functional                           ; Timing        ;
-; Start time                                                                                 ; 0 ns                                 ; 0 ns          ;
-; Simulation results format                                                                  ; VWF                                  ;               ;
-; Vector input source                                                                        ; H:/CEG3156_Lab1/nineBitAdderTest.vwf ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On                                   ; On            ;
-; Check outputs                                                                              ; Off                                  ; Off           ;
-; Report simulation coverage                                                                 ; On                                   ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On                                   ; On            ;
-; Display missing 1-value coverage report                                                    ; On                                   ; On            ;
-; Display missing 0-value coverage report                                                    ; On                                   ; On            ;
-; Detect setup and hold time violations                                                      ; Off                                  ; Off           ;
-; Detect glitches                                                                            ; Off                                  ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off                                  ; Off           ;
-; Generate Signal Activity File                                                              ; Off                                  ; Off           ;
-; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                  ; Off           ;
-; Group bus channels in simulation results                                                   ; Off                                  ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On                                   ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                           ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                  ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                  ;               ;
-; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                 ; Auto          ;
-; Interconnect Delay Model Type                                                              ; Transport                            ; Transport     ;
-; Cell Delay Model Type                                                                      ; Transport                            ; Transport     ;
-+--------------------------------------------------------------------------------------------+--------------------------------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                          ;
++--------------------------------------------------------------------------------------------+------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                        ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                     ; Timing        ;
+; Start time                                                                                 ; 0 ns                                           ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                            ;               ;
+; Vector input source                                                                        ; H:/CEG3156_Lab_1_FPAdder/threeBitDownCount.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                             ; On            ;
+; Check outputs                                                                              ; Off                                            ; Off           ;
+; Report simulation coverage                                                                 ; On                                             ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                             ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                             ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                             ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                            ; Off           ;
+; Detect glitches                                                                            ; Off                                            ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                            ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                            ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                            ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                            ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                             ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                     ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                            ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                            ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                           ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                      ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                      ; Transport     ;
++--------------------------------------------------------------------------------------------+------------------------------------------------+---------------+
 
 
 +----------------------+
 ; Simulation Waveforms ;
 +----------------------+
 Waveform report data cannot be output to ASCII.
-Please use Quartus II 64-Bit to view the waveform report data.
+Please use Quartus II 32-bit to view the waveform report data.
 
 
 +--------------------------------------------------------------------+
@@ -96,214 +96,82 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;       0.00 % ;
-; Total nodes checked                                 ; 87           ;
-; Total output ports checked                          ; 87           ;
-; Total output ports with complete 1/0-value coverage ; 0            ;
-; Total output ports with no 1/0-value coverage       ; 87           ;
-; Total output ports with no 1-value coverage         ; 87           ;
-; Total output ports with no 0-value coverage         ; 87           ;
+; Total coverage as a percentage                      ;      83.33 % ;
+; Total nodes checked                                 ; 36           ;
+; Total output ports checked                          ; 36           ;
+; Total output ports with complete 1/0-value coverage ; 30           ;
+; Total output ports with no 1/0-value coverage       ; 5            ;
+; Total output ports with no 1-value coverage         ; 5            ;
+; Total output ports with no 0-value coverage         ; 6            ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+-------------------------------------------------+
-; Complete 1/0-Value Coverage                     ;
-+-----------+------------------+------------------+
-; Node Name ; Output Port Name ; Output Port Type ;
-+-----------+------------------+------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                    ;
++----------------------------------------------+----------------------------------------------+------------------+
+; Node Name                                    ; Output Port Name                             ; Output Port Type ;
++----------------------------------------------+----------------------------------------------+------------------+
+; |threeBitDownCounter|o_zero~0                ; |threeBitDownCounter|o_zero~0                ; out0             ;
+; |threeBitDownCounter|o_zero~1                ; |threeBitDownCounter|o_zero~1                ; out0             ;
+; |threeBitDownCounter|int_next~0              ; |threeBitDownCounter|int_next~0              ; out0             ;
+; |threeBitDownCounter|int_next~1              ; |threeBitDownCounter|int_next~1              ; out0             ;
+; |threeBitDownCounter|int_next~2              ; |threeBitDownCounter|int_next~2              ; out0             ;
+; |threeBitDownCounter|int_next~3              ; |threeBitDownCounter|int_next~3              ; out0             ;
+; |threeBitDownCounter|int_next~4              ; |threeBitDownCounter|int_next~4              ; out0             ;
+; |threeBitDownCounter|int_next[2]             ; |threeBitDownCounter|int_next[2]             ; out0             ;
+; |threeBitDownCounter|int_next~5              ; |threeBitDownCounter|int_next~5              ; out0             ;
+; |threeBitDownCounter|int_next~6              ; |threeBitDownCounter|int_next~6              ; out0             ;
+; |threeBitDownCounter|int_next[1]             ; |threeBitDownCounter|int_next[1]             ; out0             ;
+; |threeBitDownCounter|int_next~7              ; |threeBitDownCounter|int_next~7              ; out0             ;
+; |threeBitDownCounter|int_next[0]             ; |threeBitDownCounter|int_next[0]             ; out0             ;
+; |threeBitDownCounter|i_load                  ; |threeBitDownCounter|i_load                  ; out              ;
+; |threeBitDownCounter|i_clock                 ; |threeBitDownCounter|i_clock                 ; out              ;
+; |threeBitDownCounter|o_zero                  ; |threeBitDownCounter|o_zero                  ; pin_out          ;
+; |threeBitDownCounter|o_Z[0]                  ; |threeBitDownCounter|o_Z[0]                  ; pin_out          ;
+; |threeBitDownCounter|o_Z[1]                  ; |threeBitDownCounter|o_Z[1]                  ; pin_out          ;
+; |threeBitDownCounter|o_Z[2]                  ; |threeBitDownCounter|o_Z[2]                  ; pin_out          ;
+; |threeBitDownCounter|enARdFF_2:dFF0|int_q    ; |threeBitDownCounter|enARdFF_2:dFF0|int_q    ; regout           ;
+; |threeBitDownCounter|mux2to1_1bit:mux0|o_y~0 ; |threeBitDownCounter|mux2to1_1bit:mux0|o_y~0 ; out0             ;
+; |threeBitDownCounter|mux2to1_1bit:mux0|o_y   ; |threeBitDownCounter|mux2to1_1bit:mux0|o_y   ; out0             ;
+; |threeBitDownCounter|enARdFF_2:dFF1|int_q    ; |threeBitDownCounter|enARdFF_2:dFF1|int_q    ; regout           ;
+; |threeBitDownCounter|mux2to1_1bit:mux1|o_y~0 ; |threeBitDownCounter|mux2to1_1bit:mux1|o_y~0 ; out0             ;
+; |threeBitDownCounter|mux2to1_1bit:mux1|o_y~1 ; |threeBitDownCounter|mux2to1_1bit:mux1|o_y~1 ; out0             ;
+; |threeBitDownCounter|mux2to1_1bit:mux1|o_y   ; |threeBitDownCounter|mux2to1_1bit:mux1|o_y   ; out0             ;
+; |threeBitDownCounter|enARdFF_2:dFF2|int_q    ; |threeBitDownCounter|enARdFF_2:dFF2|int_q    ; regout           ;
+; |threeBitDownCounter|mux2to1_1bit:mux2|o_y~0 ; |threeBitDownCounter|mux2to1_1bit:mux2|o_y~0 ; out0             ;
+; |threeBitDownCounter|mux2to1_1bit:mux2|o_y~1 ; |threeBitDownCounter|mux2to1_1bit:mux2|o_y~1 ; out0             ;
+; |threeBitDownCounter|mux2to1_1bit:mux2|o_y   ; |threeBitDownCounter|mux2to1_1bit:mux2|o_y   ; out0             ;
++----------------------------------------------+----------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                               ;
-+--------------------------+--------------------------+------------------+
-; Node Name                ; Output Port Name         ; Output Port Type ;
-+--------------------------+--------------------------+------------------+
-; |nineBitAdder|o_Value~0  ; |nineBitAdder|o_Value~0  ; out0             ;
-; |nineBitAdder|o_Value~1  ; |nineBitAdder|o_Value~1  ; out0             ;
-; |nineBitAdder|o_Value~2  ; |nineBitAdder|o_Value~2  ; out0             ;
-; |nineBitAdder|o_Value~3  ; |nineBitAdder|o_Value~3  ; out0             ;
-; |nineBitAdder|o_Value~4  ; |nineBitAdder|o_Value~4  ; out0             ;
-; |nineBitAdder|o_Value~5  ; |nineBitAdder|o_Value~5  ; out0             ;
-; |nineBitAdder|o_Value~6  ; |nineBitAdder|o_Value~6  ; out0             ;
-; |nineBitAdder|o_Value~7  ; |nineBitAdder|o_Value~7  ; out0             ;
-; |nineBitAdder|o_Value~8  ; |nineBitAdder|o_Value~8  ; out0             ;
-; |nineBitAdder|o_Value~9  ; |nineBitAdder|o_Value~9  ; out0             ;
-; |nineBitAdder|o_Value~10 ; |nineBitAdder|o_Value~10 ; out0             ;
-; |nineBitAdder|o_Value~11 ; |nineBitAdder|o_Value~11 ; out0             ;
-; |nineBitAdder|o_Value~12 ; |nineBitAdder|o_Value~12 ; out0             ;
-; |nineBitAdder|o_Value~13 ; |nineBitAdder|o_Value~13 ; out0             ;
-; |nineBitAdder|o_Value~14 ; |nineBitAdder|o_Value~14 ; out0             ;
-; |nineBitAdder|o_Value~15 ; |nineBitAdder|o_Value~15 ; out0             ;
-; |nineBitAdder|o_Value~16 ; |nineBitAdder|o_Value~16 ; out0             ;
-; |nineBitAdder|o_Value~17 ; |nineBitAdder|o_Value~17 ; out0             ;
-; |nineBitAdder|carry~0    ; |nineBitAdder|carry~0    ; out0             ;
-; |nineBitAdder|carry~1    ; |nineBitAdder|carry~1    ; out0             ;
-; |nineBitAdder|carry~2    ; |nineBitAdder|carry~2    ; out0             ;
-; |nineBitAdder|carry~3    ; |nineBitAdder|carry~3    ; out0             ;
-; |nineBitAdder|carry[1]   ; |nineBitAdder|carry[1]   ; out0             ;
-; |nineBitAdder|carry~4    ; |nineBitAdder|carry~4    ; out0             ;
-; |nineBitAdder|carry~5    ; |nineBitAdder|carry~5    ; out0             ;
-; |nineBitAdder|carry~6    ; |nineBitAdder|carry~6    ; out0             ;
-; |nineBitAdder|carry~7    ; |nineBitAdder|carry~7    ; out0             ;
-; |nineBitAdder|carry[2]   ; |nineBitAdder|carry[2]   ; out0             ;
-; |nineBitAdder|carry~8    ; |nineBitAdder|carry~8    ; out0             ;
-; |nineBitAdder|carry~9    ; |nineBitAdder|carry~9    ; out0             ;
-; |nineBitAdder|carry~10   ; |nineBitAdder|carry~10   ; out0             ;
-; |nineBitAdder|carry~11   ; |nineBitAdder|carry~11   ; out0             ;
-; |nineBitAdder|carry[3]   ; |nineBitAdder|carry[3]   ; out0             ;
-; |nineBitAdder|carry~12   ; |nineBitAdder|carry~12   ; out0             ;
-; |nineBitAdder|carry~13   ; |nineBitAdder|carry~13   ; out0             ;
-; |nineBitAdder|carry~14   ; |nineBitAdder|carry~14   ; out0             ;
-; |nineBitAdder|carry~15   ; |nineBitAdder|carry~15   ; out0             ;
-; |nineBitAdder|carry[4]   ; |nineBitAdder|carry[4]   ; out0             ;
-; |nineBitAdder|carry~16   ; |nineBitAdder|carry~16   ; out0             ;
-; |nineBitAdder|carry~17   ; |nineBitAdder|carry~17   ; out0             ;
-; |nineBitAdder|carry~18   ; |nineBitAdder|carry~18   ; out0             ;
-; |nineBitAdder|carry~19   ; |nineBitAdder|carry~19   ; out0             ;
-; |nineBitAdder|carry[5]   ; |nineBitAdder|carry[5]   ; out0             ;
-; |nineBitAdder|carry~20   ; |nineBitAdder|carry~20   ; out0             ;
-; |nineBitAdder|carry~21   ; |nineBitAdder|carry~21   ; out0             ;
-; |nineBitAdder|carry~22   ; |nineBitAdder|carry~22   ; out0             ;
-; |nineBitAdder|carry~23   ; |nineBitAdder|carry~23   ; out0             ;
-; |nineBitAdder|carry[6]   ; |nineBitAdder|carry[6]   ; out0             ;
-; |nineBitAdder|carry~24   ; |nineBitAdder|carry~24   ; out0             ;
-; |nineBitAdder|carry~25   ; |nineBitAdder|carry~25   ; out0             ;
-; |nineBitAdder|carry~26   ; |nineBitAdder|carry~26   ; out0             ;
-; |nineBitAdder|carry~27   ; |nineBitAdder|carry~27   ; out0             ;
-; |nineBitAdder|carry[7]   ; |nineBitAdder|carry[7]   ; out0             ;
-; |nineBitAdder|carry~28   ; |nineBitAdder|carry~28   ; out0             ;
-; |nineBitAdder|carry~29   ; |nineBitAdder|carry~29   ; out0             ;
-; |nineBitAdder|carry~30   ; |nineBitAdder|carry~30   ; out0             ;
-; |nineBitAdder|carry~31   ; |nineBitAdder|carry~31   ; out0             ;
-; |nineBitAdder|carry~32   ; |nineBitAdder|carry~32   ; out0             ;
-; |nineBitAdder|i_a[0]     ; |nineBitAdder|i_a[0]     ; out              ;
-; |nineBitAdder|i_a[1]     ; |nineBitAdder|i_a[1]     ; out              ;
-; |nineBitAdder|i_a[2]     ; |nineBitAdder|i_a[2]     ; out              ;
-; |nineBitAdder|i_a[3]     ; |nineBitAdder|i_a[3]     ; out              ;
-; |nineBitAdder|i_a[4]     ; |nineBitAdder|i_a[4]     ; out              ;
-; |nineBitAdder|i_a[5]     ; |nineBitAdder|i_a[5]     ; out              ;
-; |nineBitAdder|i_a[6]     ; |nineBitAdder|i_a[6]     ; out              ;
-; |nineBitAdder|i_a[7]     ; |nineBitAdder|i_a[7]     ; out              ;
-; |nineBitAdder|i_a[8]     ; |nineBitAdder|i_a[8]     ; out              ;
-; |nineBitAdder|i_b[0]     ; |nineBitAdder|i_b[0]     ; out              ;
-; |nineBitAdder|i_b[1]     ; |nineBitAdder|i_b[1]     ; out              ;
-; |nineBitAdder|i_b[2]     ; |nineBitAdder|i_b[2]     ; out              ;
-; |nineBitAdder|i_b[3]     ; |nineBitAdder|i_b[3]     ; out              ;
-; |nineBitAdder|i_b[4]     ; |nineBitAdder|i_b[4]     ; out              ;
-; |nineBitAdder|i_b[5]     ; |nineBitAdder|i_b[5]     ; out              ;
-; |nineBitAdder|i_b[6]     ; |nineBitAdder|i_b[6]     ; out              ;
-; |nineBitAdder|i_b[7]     ; |nineBitAdder|i_b[7]     ; out              ;
-; |nineBitAdder|i_b[8]     ; |nineBitAdder|i_b[8]     ; out              ;
-; |nineBitAdder|i_cin      ; |nineBitAdder|i_cin      ; out              ;
-; |nineBitAdder|o_cout     ; |nineBitAdder|o_cout     ; pin_out          ;
-; |nineBitAdder|o_Value[0] ; |nineBitAdder|o_Value[0] ; pin_out          ;
-; |nineBitAdder|o_Value[1] ; |nineBitAdder|o_Value[1] ; pin_out          ;
-; |nineBitAdder|o_Value[2] ; |nineBitAdder|o_Value[2] ; pin_out          ;
-; |nineBitAdder|o_Value[3] ; |nineBitAdder|o_Value[3] ; pin_out          ;
-; |nineBitAdder|o_Value[4] ; |nineBitAdder|o_Value[4] ; pin_out          ;
-; |nineBitAdder|o_Value[5] ; |nineBitAdder|o_Value[5] ; pin_out          ;
-; |nineBitAdder|o_Value[6] ; |nineBitAdder|o_Value[6] ; pin_out          ;
-; |nineBitAdder|o_Value[7] ; |nineBitAdder|o_Value[7] ; pin_out          ;
-; |nineBitAdder|o_Value[8] ; |nineBitAdder|o_Value[8] ; pin_out          ;
-+--------------------------+--------------------------+------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                       ;
++----------------------------------------------+----------------------------------------------+------------------+
+; Node Name                                    ; Output Port Name                             ; Output Port Type ;
++----------------------------------------------+----------------------------------------------+------------------+
+; |threeBitDownCounter|i_value[0]              ; |threeBitDownCounter|i_value[0]              ; out              ;
+; |threeBitDownCounter|i_value[1]              ; |threeBitDownCounter|i_value[1]              ; out              ;
+; |threeBitDownCounter|i_value[2]              ; |threeBitDownCounter|i_value[2]              ; out              ;
+; |threeBitDownCounter|i_resetBar              ; |threeBitDownCounter|i_resetBar              ; out              ;
+; |threeBitDownCounter|mux2to1_1bit:mux0|o_y~1 ; |threeBitDownCounter|mux2to1_1bit:mux0|o_y~1 ; out0             ;
++----------------------------------------------+----------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                               ;
-+--------------------------+--------------------------+------------------+
-; Node Name                ; Output Port Name         ; Output Port Type ;
-+--------------------------+--------------------------+------------------+
-; |nineBitAdder|o_Value~0  ; |nineBitAdder|o_Value~0  ; out0             ;
-; |nineBitAdder|o_Value~1  ; |nineBitAdder|o_Value~1  ; out0             ;
-; |nineBitAdder|o_Value~2  ; |nineBitAdder|o_Value~2  ; out0             ;
-; |nineBitAdder|o_Value~3  ; |nineBitAdder|o_Value~3  ; out0             ;
-; |nineBitAdder|o_Value~4  ; |nineBitAdder|o_Value~4  ; out0             ;
-; |nineBitAdder|o_Value~5  ; |nineBitAdder|o_Value~5  ; out0             ;
-; |nineBitAdder|o_Value~6  ; |nineBitAdder|o_Value~6  ; out0             ;
-; |nineBitAdder|o_Value~7  ; |nineBitAdder|o_Value~7  ; out0             ;
-; |nineBitAdder|o_Value~8  ; |nineBitAdder|o_Value~8  ; out0             ;
-; |nineBitAdder|o_Value~9  ; |nineBitAdder|o_Value~9  ; out0             ;
-; |nineBitAdder|o_Value~10 ; |nineBitAdder|o_Value~10 ; out0             ;
-; |nineBitAdder|o_Value~11 ; |nineBitAdder|o_Value~11 ; out0             ;
-; |nineBitAdder|o_Value~12 ; |nineBitAdder|o_Value~12 ; out0             ;
-; |nineBitAdder|o_Value~13 ; |nineBitAdder|o_Value~13 ; out0             ;
-; |nineBitAdder|o_Value~14 ; |nineBitAdder|o_Value~14 ; out0             ;
-; |nineBitAdder|o_Value~15 ; |nineBitAdder|o_Value~15 ; out0             ;
-; |nineBitAdder|o_Value~16 ; |nineBitAdder|o_Value~16 ; out0             ;
-; |nineBitAdder|o_Value~17 ; |nineBitAdder|o_Value~17 ; out0             ;
-; |nineBitAdder|carry~0    ; |nineBitAdder|carry~0    ; out0             ;
-; |nineBitAdder|carry~1    ; |nineBitAdder|carry~1    ; out0             ;
-; |nineBitAdder|carry~2    ; |nineBitAdder|carry~2    ; out0             ;
-; |nineBitAdder|carry~3    ; |nineBitAdder|carry~3    ; out0             ;
-; |nineBitAdder|carry[1]   ; |nineBitAdder|carry[1]   ; out0             ;
-; |nineBitAdder|carry~4    ; |nineBitAdder|carry~4    ; out0             ;
-; |nineBitAdder|carry~5    ; |nineBitAdder|carry~5    ; out0             ;
-; |nineBitAdder|carry~6    ; |nineBitAdder|carry~6    ; out0             ;
-; |nineBitAdder|carry~7    ; |nineBitAdder|carry~7    ; out0             ;
-; |nineBitAdder|carry[2]   ; |nineBitAdder|carry[2]   ; out0             ;
-; |nineBitAdder|carry~8    ; |nineBitAdder|carry~8    ; out0             ;
-; |nineBitAdder|carry~9    ; |nineBitAdder|carry~9    ; out0             ;
-; |nineBitAdder|carry~10   ; |nineBitAdder|carry~10   ; out0             ;
-; |nineBitAdder|carry~11   ; |nineBitAdder|carry~11   ; out0             ;
-; |nineBitAdder|carry[3]   ; |nineBitAdder|carry[3]   ; out0             ;
-; |nineBitAdder|carry~12   ; |nineBitAdder|carry~12   ; out0             ;
-; |nineBitAdder|carry~13   ; |nineBitAdder|carry~13   ; out0             ;
-; |nineBitAdder|carry~14   ; |nineBitAdder|carry~14   ; out0             ;
-; |nineBitAdder|carry~15   ; |nineBitAdder|carry~15   ; out0             ;
-; |nineBitAdder|carry[4]   ; |nineBitAdder|carry[4]   ; out0             ;
-; |nineBitAdder|carry~16   ; |nineBitAdder|carry~16   ; out0             ;
-; |nineBitAdder|carry~17   ; |nineBitAdder|carry~17   ; out0             ;
-; |nineBitAdder|carry~18   ; |nineBitAdder|carry~18   ; out0             ;
-; |nineBitAdder|carry~19   ; |nineBitAdder|carry~19   ; out0             ;
-; |nineBitAdder|carry[5]   ; |nineBitAdder|carry[5]   ; out0             ;
-; |nineBitAdder|carry~20   ; |nineBitAdder|carry~20   ; out0             ;
-; |nineBitAdder|carry~21   ; |nineBitAdder|carry~21   ; out0             ;
-; |nineBitAdder|carry~22   ; |nineBitAdder|carry~22   ; out0             ;
-; |nineBitAdder|carry~23   ; |nineBitAdder|carry~23   ; out0             ;
-; |nineBitAdder|carry[6]   ; |nineBitAdder|carry[6]   ; out0             ;
-; |nineBitAdder|carry~24   ; |nineBitAdder|carry~24   ; out0             ;
-; |nineBitAdder|carry~25   ; |nineBitAdder|carry~25   ; out0             ;
-; |nineBitAdder|carry~26   ; |nineBitAdder|carry~26   ; out0             ;
-; |nineBitAdder|carry~27   ; |nineBitAdder|carry~27   ; out0             ;
-; |nineBitAdder|carry[7]   ; |nineBitAdder|carry[7]   ; out0             ;
-; |nineBitAdder|carry~28   ; |nineBitAdder|carry~28   ; out0             ;
-; |nineBitAdder|carry~29   ; |nineBitAdder|carry~29   ; out0             ;
-; |nineBitAdder|carry~30   ; |nineBitAdder|carry~30   ; out0             ;
-; |nineBitAdder|carry~31   ; |nineBitAdder|carry~31   ; out0             ;
-; |nineBitAdder|carry~32   ; |nineBitAdder|carry~32   ; out0             ;
-; |nineBitAdder|i_a[0]     ; |nineBitAdder|i_a[0]     ; out              ;
-; |nineBitAdder|i_a[1]     ; |nineBitAdder|i_a[1]     ; out              ;
-; |nineBitAdder|i_a[2]     ; |nineBitAdder|i_a[2]     ; out              ;
-; |nineBitAdder|i_a[3]     ; |nineBitAdder|i_a[3]     ; out              ;
-; |nineBitAdder|i_a[4]     ; |nineBitAdder|i_a[4]     ; out              ;
-; |nineBitAdder|i_a[5]     ; |nineBitAdder|i_a[5]     ; out              ;
-; |nineBitAdder|i_a[6]     ; |nineBitAdder|i_a[6]     ; out              ;
-; |nineBitAdder|i_a[7]     ; |nineBitAdder|i_a[7]     ; out              ;
-; |nineBitAdder|i_a[8]     ; |nineBitAdder|i_a[8]     ; out              ;
-; |nineBitAdder|i_b[0]     ; |nineBitAdder|i_b[0]     ; out              ;
-; |nineBitAdder|i_b[1]     ; |nineBitAdder|i_b[1]     ; out              ;
-; |nineBitAdder|i_b[2]     ; |nineBitAdder|i_b[2]     ; out              ;
-; |nineBitAdder|i_b[3]     ; |nineBitAdder|i_b[3]     ; out              ;
-; |nineBitAdder|i_b[4]     ; |nineBitAdder|i_b[4]     ; out              ;
-; |nineBitAdder|i_b[5]     ; |nineBitAdder|i_b[5]     ; out              ;
-; |nineBitAdder|i_b[6]     ; |nineBitAdder|i_b[6]     ; out              ;
-; |nineBitAdder|i_b[7]     ; |nineBitAdder|i_b[7]     ; out              ;
-; |nineBitAdder|i_b[8]     ; |nineBitAdder|i_b[8]     ; out              ;
-; |nineBitAdder|i_cin      ; |nineBitAdder|i_cin      ; out              ;
-; |nineBitAdder|o_cout     ; |nineBitAdder|o_cout     ; pin_out          ;
-; |nineBitAdder|o_Value[0] ; |nineBitAdder|o_Value[0] ; pin_out          ;
-; |nineBitAdder|o_Value[1] ; |nineBitAdder|o_Value[1] ; pin_out          ;
-; |nineBitAdder|o_Value[2] ; |nineBitAdder|o_Value[2] ; pin_out          ;
-; |nineBitAdder|o_Value[3] ; |nineBitAdder|o_Value[3] ; pin_out          ;
-; |nineBitAdder|o_Value[4] ; |nineBitAdder|o_Value[4] ; pin_out          ;
-; |nineBitAdder|o_Value[5] ; |nineBitAdder|o_Value[5] ; pin_out          ;
-; |nineBitAdder|o_Value[6] ; |nineBitAdder|o_Value[6] ; pin_out          ;
-; |nineBitAdder|o_Value[7] ; |nineBitAdder|o_Value[7] ; pin_out          ;
-; |nineBitAdder|o_Value[8] ; |nineBitAdder|o_Value[8] ; pin_out          ;
-+--------------------------+--------------------------+------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                       ;
++----------------------------------------------+----------------------------------------------+------------------+
+; Node Name                                    ; Output Port Name                             ; Output Port Type ;
++----------------------------------------------+----------------------------------------------+------------------+
+; |threeBitDownCounter|i_value[0]              ; |threeBitDownCounter|i_value[0]              ; out              ;
+; |threeBitDownCounter|i_value[1]              ; |threeBitDownCounter|i_value[1]              ; out              ;
+; |threeBitDownCounter|i_value[2]              ; |threeBitDownCounter|i_value[2]              ; out              ;
+; |threeBitDownCounter|i_resetBar              ; |threeBitDownCounter|i_resetBar              ; out              ;
+; |threeBitDownCounter|i_enable                ; |threeBitDownCounter|i_enable                ; out              ;
+; |threeBitDownCounter|mux2to1_1bit:mux0|o_y~1 ; |threeBitDownCounter|mux2to1_1bit:mux0|o_y~1 ; out0             ;
++----------------------------------------------+----------------------------------------------+------------------+
 
 
 +---------------------+
@@ -317,21 +185,21 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; Simulator Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Simulator
+Info: Running Quartus II 32-bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jan 22 12:16:06 2026
+    Info: Processing started: Wed Feb 04 14:07:24 2026
 Info: Command: quartus_sim --simulation_results_format=VWF CEG3156_Lab1_FPAdder -c CEG3156_Lab1_FPAdder_qsim
-Info (324025): Using vector source file "H:/CEG3156_Lab1/nineBitAdderTest.vwf"
+Info (324025): Using vector source file "H:/CEG3156_Lab_1_FPAdder/threeBitDownCount.vwf"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is       0.00 %
-Info (328052): Number of transitions in simulation is 0
+Info (328053): Simulation coverage is      83.33 %
+Info (328052): Number of transitions in simulation is 388
 Info (324045): Vector file CEG3156_Lab1_FPAdder_qsim.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4470 megabytes
-    Info: Processing ended: Thu Jan 22 12:16:07 2026
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 32-bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 280 megabytes
+    Info: Processing ended: Wed Feb 04 14:07:27 2026
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

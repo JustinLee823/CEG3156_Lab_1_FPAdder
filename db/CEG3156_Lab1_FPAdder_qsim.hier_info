@@ -1,66 +1,73 @@
-|nineBitAdder
-i_a[0] => o_Value~0.IN0
-i_a[0] => carry~0.IN0
-i_a[0] => carry~1.IN0
-i_a[1] => o_Value~2.IN0
-i_a[1] => carry~4.IN0
-i_a[1] => carry~5.IN1
-i_a[2] => o_Value~4.IN0
-i_a[2] => carry~8.IN0
-i_a[2] => carry~9.IN1
-i_a[3] => o_Value~6.IN0
-i_a[3] => carry~12.IN0
-i_a[3] => carry~13.IN1
-i_a[4] => o_Value~8.IN0
-i_a[4] => carry~16.IN0
-i_a[4] => carry~17.IN1
-i_a[5] => o_Value~10.IN0
-i_a[5] => carry~20.IN0
-i_a[5] => carry~21.IN1
-i_a[6] => o_Value~12.IN0
-i_a[6] => carry~24.IN0
-i_a[6] => carry~25.IN1
-i_a[7] => o_Value~14.IN0
-i_a[7] => carry~28.IN0
-i_a[7] => carry~29.IN1
-i_a[8] => o_Value~16.IN0
-i_b[0] => o_Value~0.IN1
-i_b[0] => carry~0.IN1
-i_b[0] => carry~3.IN0
-i_b[1] => o_Value~2.IN1
-i_b[1] => carry~4.IN1
-i_b[1] => carry~7.IN1
-i_b[2] => o_Value~4.IN1
-i_b[2] => carry~8.IN1
-i_b[2] => carry~11.IN1
-i_b[3] => o_Value~6.IN1
-i_b[3] => carry~12.IN1
-i_b[3] => carry~15.IN1
-i_b[4] => o_Value~8.IN1
-i_b[4] => carry~16.IN1
-i_b[4] => carry~19.IN1
-i_b[5] => o_Value~10.IN1
-i_b[5] => carry~20.IN1
-i_b[5] => carry~23.IN1
-i_b[6] => o_Value~12.IN1
-i_b[6] => carry~24.IN1
-i_b[6] => carry~27.IN1
-i_b[7] => o_Value~14.IN1
-i_b[7] => carry~28.IN1
-i_b[7] => carry~31.IN1
-i_b[8] => o_Value~16.IN1
-i_cin => o_Value~1.IN1
-i_cin => carry~1.IN1
-i_cin => carry~3.IN1
-o_cout <= carry~32.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[0] <= o_Value~1.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[1] <= o_Value~3.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[2] <= o_Value~5.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[3] <= o_Value~7.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[4] <= o_Value~9.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[5] <= o_Value~11.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[6] <= o_Value~13.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[7] <= o_Value~15.DB_MAX_OUTPUT_PORT_TYPE
-o_Value[8] <= o_Value~17.DB_MAX_OUTPUT_PORT_TYPE
+|threeBitDownCounter
+i_value[0] => mux2to1_1bit:mux0.i_1
+i_value[1] => mux2to1_1bit:mux1.i_1
+i_value[2] => mux2to1_1bit:mux2.i_1
+i_resetBar => enardFF_2:dFF2.i_resetBar
+i_resetBar => enardFF_2:dFF1.i_resetBar
+i_resetBar => enardFF_2:dFF0.i_resetBar
+i_enable => enardFF_2:dFF2.i_enable
+i_enable => enardFF_2:dFF1.i_enable
+i_enable => enardFF_2:dFF0.i_enable
+i_load => mux2to1_1bit:mux2.i_sel
+i_load => mux2to1_1bit:mux1.i_sel
+i_load => mux2to1_1bit:mux0.i_sel
+i_clock => enardFF_2:dFF2.i_clock
+i_clock => enardFF_2:dFF1.i_clock
+i_clock => enardFF_2:dFF0.i_clock
+o_zero <= o_zero~1.DB_MAX_OUTPUT_PORT_TYPE
+o_Z[0] <= int_next[0].DB_MAX_OUTPUT_PORT_TYPE
+o_Z[1] <= int_next[1].DB_MAX_OUTPUT_PORT_TYPE
+o_Z[2] <= int_next[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|mux2to1_1bit:mux2
+i_0 => o_y~0.IN0
+i_1 => o_y~1.IN0
+i_sel => o_y~1.IN1
+i_sel => o_y~0.IN1
+o_y <= o_y~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|enARdFF_2:dFF2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|mux2to1_1bit:mux1
+i_0 => o_y~0.IN0
+i_1 => o_y~1.IN0
+i_sel => o_y~1.IN1
+i_sel => o_y~0.IN1
+o_y <= o_y~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|enARdFF_2:dFF1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|mux2to1_1bit:mux0
+i_0 => o_y~0.IN0
+i_1 => o_y~1.IN0
+i_sel => o_y~1.IN1
+i_sel => o_y~0.IN1
+o_y <= o_y~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|threeBitDownCounter|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 

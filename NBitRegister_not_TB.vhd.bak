@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity NBitRegister_not_TB is
+	port(
+		i_clock, i_resetBar, i_load : in std_logic;
+		i_Value : in std_logic_vector(7 downto 0),
+		o_Value : out std_logic_vector(7 downto 0));
+end entity;
+
+architecture rtl of NBitRegister_not_TB is
+	
+	signal int_qOut : std_logic_vector(7 downto 0);
+	
+	begin
+		sevenBitRegister : NBitRegister
+			generic map(WIDTH => 7);
+			port map(
+				i_clock, i_resetBar, i_load : in std_logic,
+				i_value => i_Value,
+				o_value => int_qOut);
+		
+		o_Value <= int_qOut;
+end rtl;
+		
