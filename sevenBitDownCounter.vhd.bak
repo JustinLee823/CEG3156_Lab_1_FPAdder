@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity sevenBitDownCounter 
+	port(i_value : in std_logic_vector(6 downto 0);
+		i_resetBar, i_clock, i_load, i_enable : in std_logic;
+		o_zero : out std_logic;
+		o_Z : out std_logic_vector(6 downto 0));
+end entity;
+
+architecture rtl of sevenBitDownCounter is
+
+begin
+
+end rtl;

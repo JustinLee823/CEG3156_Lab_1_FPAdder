@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dH:\CEG3156_Lab_1_FPAdder\simulation\qsim
+vsevenBitUpCounter
+Z1 !s100 nYmNXO>WbkRcFLol4:K3U0
+Z2 I6K]6:PK7j`be:n:aMe9jY3
+Z3 V9M5IWDjTMIeE4h@X=fZKC1
+Z4 dH:\CEG3156_Lab_1_FPAdder\simulation\qsim
+Z5 w1770327914
+Z6 8CEG3156_Lab1_FPAdder.vo
+Z7 FCEG3156_Lab1_FPAdder.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|CEG3156_Lab1_FPAdder.vo|
+Z10 o-work work -O0
+Z11 nseven@bit@up@counter
+!i10b 1
+!s85 0
+Z12 !s108 1770327917.549000
+Z13 !s107 CEG3156_Lab1_FPAdder.vo|
+!s101 -O0
+vsevenBitUpCounter_vlg_check_tst
+!i10b 1
+Z14 !s100 bz2OS_QHzzEWYFBN6UhG21
+Z15 IQ]LA;Wce;cdUiR4j5Nh@o3
+Z16 Vj0o6@5BnXE`cT3P?1X`oB0
+R4
+Z17 w1770327912
+Z18 8CEG3156_Lab1_FPAdder.vt
+Z19 FCEG3156_Lab1_FPAdder.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z20 !s108 1770327917.975000
+Z21 !s107 CEG3156_Lab1_FPAdder.vt|
+Z22 !s90 -work|work|CEG3156_Lab1_FPAdder.vt|
+!s101 -O0
+R10
+Z23 nseven@bit@up@counter_vlg_check_tst
+vsevenBitUpCounter_vlg_sample_tst
+!i10b 1
+Z24 !s100 VbM1KEG3koAPC02ec=?n31
+Z25 II60@[JHK]RUGbCd=K6f1O1
+Z26 VYC_Q:6AS^zmUM_fH>:F4_1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 nseven@bit@up@counter_vlg_sample_tst
+vsevenBitUpCounter_vlg_vec_tst
+!i10b 1
+Z28 !s100 SoIjo:?f328ZReT5WiIl73
+Z29 IBjP:T3ZMIhUK:Mmnm9Rj43
+Z30 VOWL?7UBJOEj2UX<3NVI6;1
+R4
+R17
+R18
+R19
+Z31 L0 294
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 nseven@bit@up@counter_vlg_vec_tst

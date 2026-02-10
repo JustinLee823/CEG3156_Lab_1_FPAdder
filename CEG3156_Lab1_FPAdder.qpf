@@ -16,15 +16,16 @@
 #
 # -------------------------------------------------------------------------- #
 #
-# Quartus II 32-bit
+# Quartus II 64-Bit
 # Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 14:07:29  February 04, 2026
+# Date created = 15:39:57  February 06, 2026
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "14:07:29  February 04, 2026"
+DATE = "15:39:57  February 06, 2026"
 
 # Revisions
 
 PROJECT_REVISION = "CEG3156_Lab1_FPAdder"
+PROJECT_REVISION = "CEG3156_Lab1_FPAdder_qsim"

@@ -36,7 +36,7 @@ begin
 	dFF3 : enardFF_2
 	port map(i_resetBar => i_resetBar,
 		i_d => int_muxOut(3),
-		i_enable => i_enable,
+		i_enable => i_enable or i_load,
 		i_clock => i_clock,
 		o_q => y(3),
 		o_qBar => yBar(3));
@@ -49,7 +49,7 @@ begin
 	dFF2 : enardFF_2
 	port map(i_resetBar => i_resetBar,
 		i_d => int_muxOut(2),
-		i_enable => i_enable,
+		i_enable => i_enable or i_load,
 		i_clock => i_clock,
 		o_q => y(2),
 		o_qBar => yBar(2));
@@ -62,7 +62,7 @@ begin
 	dFF1 : enardFF_2
 	port map(i_resetBar => i_resetBar,
 		i_d => int_muxOut(1),
-		i_enable => i_enable,
+		i_enable => i_enable or i_load,
 		i_clock => i_clock,
 		o_q => y(1),
 		o_qBar => yBar(1));
@@ -75,12 +75,12 @@ begin
 	dFF0 : enardFF_2
 	port map(i_resetBar => i_resetBar,
 		i_d => int_muxOut(0),
-		i_enable => i_enable,
+		i_enable => i_enable or i_load,
 		i_clock => i_clock,
 		o_q => y(0),
 		o_qBar => yBar(0));
 		
-	o_zero <= (y(0) and not y(1) and not y(2) and not y(3));	
+	o_zero <= (not y(0) and not y(1) and not y(2) and not y(3));	
 	int_next(3) <= ((yBar(3) and yBar(2) and yBar(1) and yBar(0)) or (y(3) and y(2)) or (y(3) and y(0)) or (y(3) and y(1)));
 	int_next(2) <= ((yBar(2) and yBar(1) and yBar(0)) or (y(2) and y(0)) or (y(2) and y(1)));
 	int_next(1) <= ((yBar(1) and yBar(0)) or (y(1) and y(0)));

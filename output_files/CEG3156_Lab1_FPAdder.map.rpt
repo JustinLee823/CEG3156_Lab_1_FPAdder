@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CEG3156_Lab1_FPAdder
-Wed Feb 04 14:12:04 2026
+Tue Feb 10 15:28:31 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,55 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF9"
+ 12. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF8"
+ 13. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF7"
+ 14. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF6"
+ 15. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF5"
+ 16. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF4"
+ 17. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF3"
+ 18. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF2"
+ 19. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF1"
+ 20. Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF0"
+ 21. Port Connectivity Checks: "FPAdder_Control:Controlpath"
+ 22. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantSum"
+ 23. Port Connectivity Checks: "FPAdder_Data:Datapath|tenBitAdder:mantAdder"
+ 24. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF0"
+ 25. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF1"
+ 26. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF2"
+ 27. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF3"
+ 28. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF4"
+ 29. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF5"
+ 30. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF6"
+ 31. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF7"
+ 32. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF8"
+ 33. Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_8"
+ 34. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff0"
+ 35. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff1"
+ 36. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff2"
+ 37. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff3"
+ 38. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff0"
+ 39. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff1"
+ 40. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff2"
+ 41. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount"
+ 42. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp6"
+ 43. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitComparator:notless9CMP"
+ 44. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit"
+ 45. Port Connectivity Checks: "FPAdder_Data:Datapath|eightBitAdder:expoAdder"
+ 46. Port Connectivity Checks: "FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out"
+ 47. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b0"
+ 48. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b1"
+ 49. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b2"
+ 50. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b3"
+ 51. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b4"
+ 52. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b5"
+ 53. Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b6"
+ 54. Port Connectivity Checks: "FPAdder_Data:Datapath"
+ 55. Elapsed Time Per Partition
+ 56. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +87,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 04 14:12:03 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 10 15:28:31 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; CEG3156_Lab1_FPAdder                            ;
-; Top-level Entity Name              ; threeBitDownCounter                             ;
+; Top-level Entity Name              ; FPAdder_Top                                     ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 7                                               ;
-;     Total combinational functions  ; 7                                               ;
-;     Dedicated logic registers      ; 3                                               ;
-; Total registers                    ; 3                                               ;
-; Total pins                         ; 11                                              ;
+; Total logic elements               ; 5                                               ;
+;     Total combinational functions  ; 5                                               ;
+;     Dedicated logic registers      ; 4                                               ;
+; Total registers                    ; 4                                               ;
+; Total pins                         ; 50                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -58,91 +104,91 @@ applicable agreement for further details.
 +------------------------------------+-------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                           ;
-+----------------------------------------------------------------------------+---------------------+----------------------+
-; Option                                                                     ; Setting             ; Default Value        ;
-+----------------------------------------------------------------------------+---------------------+----------------------+
-; Device                                                                     ; EP4CE115F29C7       ;                      ;
-; Top-level entity name                                                      ; threeBitDownCounter ; CEG3156_Lab1_FPAdder ;
-; Family name                                                                ; Cyclone IV E        ; Cyclone IV GX        ;
-; Use smart compilation                                                      ; Off                 ; Off                  ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                   ;
-; Enable compact report table                                                ; Off                 ; Off                  ;
-; Restructure Multiplexers                                                   ; Auto                ; Auto                 ;
-; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                  ;
-; Preserve fewer node names                                                  ; On                  ; On                   ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                 ; Off                  ;
-; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001         ;
-; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993            ;
-; State Machine Processing                                                   ; Auto                ; Auto                 ;
-; Safe State Machine                                                         ; Off                 ; Off                  ;
-; Extract Verilog State Machines                                             ; On                  ; On                   ;
-; Extract VHDL State Machines                                                ; On                  ; On                   ;
-; Ignore Verilog initial constructs                                          ; Off                 ; Off                  ;
-; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000                 ;
-; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                  ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                   ;
-; Infer RAMs from Raw Logic                                                  ; On                  ; On                   ;
-; Parallel Synthesis                                                         ; On                  ; On                   ;
-; DSP Block Balancing                                                        ; Auto                ; Auto                 ;
-; NOT Gate Push-Back                                                         ; On                  ; On                   ;
-; Power-Up Don't Care                                                        ; On                  ; On                   ;
-; Remove Redundant Logic Cells                                               ; Off                 ; Off                  ;
-; Remove Duplicate Registers                                                 ; On                  ; On                   ;
-; Ignore CARRY Buffers                                                       ; Off                 ; Off                  ;
-; Ignore CASCADE Buffers                                                     ; Off                 ; Off                  ;
-; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                  ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                  ;
-; Ignore LCELL Buffers                                                       ; Off                 ; Off                  ;
-; Ignore SOFT Buffers                                                        ; On                  ; On                   ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                  ;
-; Optimization Technique                                                     ; Balanced            ; Balanced             ;
-; Carry Chain Length                                                         ; 70                  ; 70                   ;
-; Auto Carry Chains                                                          ; On                  ; On                   ;
-; Auto Open-Drain Pins                                                       ; On                  ; On                   ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                  ;
-; Auto ROM Replacement                                                       ; On                  ; On                   ;
-; Auto RAM Replacement                                                       ; On                  ; On                   ;
-; Auto DSP Block Replacement                                                 ; On                  ; On                   ;
-; Auto Shift Register Replacement                                            ; Auto                ; Auto                 ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto                ; Auto                 ;
-; Auto Clock Enable Replacement                                              ; On                  ; On                   ;
-; Strict RAM Replacement                                                     ; Off                 ; Off                  ;
-; Allow Synchronous Control Signals                                          ; On                  ; On                   ;
-; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                  ;
-; Auto RAM Block Balancing                                                   ; On                  ; On                   ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                  ;
-; Auto Resource Sharing                                                      ; Off                 ; Off                  ;
-; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                  ;
-; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                  ;
-; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                  ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                   ;
-; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                  ;
-; Timing-Driven Synthesis                                                    ; On                  ; On                   ;
-; Report Parameter Settings                                                  ; On                  ; On                   ;
-; Report Source Assignments                                                  ; On                  ; On                   ;
-; Report Connectivity Checks                                                 ; On                  ; On                   ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                  ;
-; Synchronization Register Chain Length                                      ; 2                   ; 2                    ;
-; PowerPlay Power Optimization                                               ; Normal compilation  ; Normal compilation   ;
-; HDL message level                                                          ; Level2              ; Level2               ;
-; Suppress Register Optimization Related Messages                            ; Off                 ; Off                  ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000                 ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                ; 5000                 ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                  ;
-; Clock MUX Protection                                                       ; On                  ; On                   ;
-; Auto Gated Clock Conversion                                                ; Off                 ; Off                  ;
-; Block Design Naming                                                        ; Auto                ; Auto                 ;
-; SDC constraint protection                                                  ; Off                 ; Off                  ;
-; Synthesis Effort                                                           ; Auto                ; Auto                 ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                   ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                 ; Off                  ;
-; Analysis & Synthesis Message Level                                         ; Medium              ; Medium               ;
-; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto                 ;
-; Resource Aware Inference For Block RAM                                     ; On                  ; On                   ;
-; Synthesis Seed                                                             ; 1                   ; 1                    ;
-+----------------------------------------------------------------------------+---------------------+----------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++----------------------------------------------------------------------------+--------------------+----------------------+
+; Option                                                                     ; Setting            ; Default Value        ;
++----------------------------------------------------------------------------+--------------------+----------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                      ;
+; Top-level entity name                                                      ; FPAdder_Top        ; CEG3156_Lab1_FPAdder ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX        ;
+; Use smart compilation                                                      ; Off                ; Off                  ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                   ;
+; Enable compact report table                                                ; Off                ; Off                  ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto                 ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                  ;
+; Preserve fewer node names                                                  ; On                 ; On                   ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                  ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001         ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993            ;
+; State Machine Processing                                                   ; Auto               ; Auto                 ;
+; Safe State Machine                                                         ; Off                ; Off                  ;
+; Extract Verilog State Machines                                             ; On                 ; On                   ;
+; Extract VHDL State Machines                                                ; On                 ; On                   ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                  ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000                 ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                  ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                   ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                   ;
+; Parallel Synthesis                                                         ; On                 ; On                   ;
+; DSP Block Balancing                                                        ; Auto               ; Auto                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                   ;
+; Power-Up Don't Care                                                        ; On                 ; On                   ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                  ;
+; Remove Duplicate Registers                                                 ; On                 ; On                   ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                  ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                  ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                  ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                  ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                  ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                   ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                  ;
+; Optimization Technique                                                     ; Balanced           ; Balanced             ;
+; Carry Chain Length                                                         ; 70                 ; 70                   ;
+; Auto Carry Chains                                                          ; On                 ; On                   ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                   ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                  ;
+; Auto ROM Replacement                                                       ; On                 ; On                   ;
+; Auto RAM Replacement                                                       ; On                 ; On                   ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                   ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto                 ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto                 ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                   ;
+; Strict RAM Replacement                                                     ; Off                ; Off                  ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                   ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                  ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                   ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                  ;
+; Auto Resource Sharing                                                      ; Off                ; Off                  ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                  ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                  ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                  ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                   ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                  ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                   ;
+; Report Parameter Settings                                                  ; On                 ; On                   ;
+; Report Source Assignments                                                  ; On                 ; On                   ;
+; Report Connectivity Checks                                                 ; On                 ; On                   ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                  ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                    ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation   ;
+; HDL message level                                                          ; Level2             ; Level2               ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                  ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000                 ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000                 ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                  ;
+; Clock MUX Protection                                                       ; On                 ; On                   ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                  ;
+; Block Design Naming                                                        ; Auto               ; Auto                 ;
+; SDC constraint protection                                                  ; Off                ; Off                  ;
+; Synthesis Effort                                                           ; Auto               ; Auto                 ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                   ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                  ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium               ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto                 ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                   ;
+; Synthesis Seed                                                             ; 1                  ; 1                    ;
++----------------------------------------------------------------------------+--------------------+----------------------+
 
 
 Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
@@ -151,66 +197,192 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 6      ;
+; Number detected on machine ; 20     ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                            ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
-; mux2to1_1bit.vhd                 ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/mux2to1_1bit.vhd        ;         ;
-; enardFF_2.vhd                    ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/enardFF_2.vhd           ;         ;
-; threeBitDownCounter.vhd          ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/threeBitDownCounter.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                             ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                      ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
+; threeBitCounter.vhd              ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/threeBitCounter.vhd      ;         ;
+; fourBitCounter.vhd               ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/fourBitCounter.vhd       ;         ;
+; twosComp8Bit.vhd                 ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/twosComp8Bit.vhd         ;         ;
+; onebitcomparator.vhd             ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/onebitcomparator.vhd     ;         ;
+; mux2to1_1bit.vhd                 ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/mux2to1_1bit.vhd         ;         ;
+; enardFF_2.vhd                    ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/enardFF_2.vhd            ;         ;
+; nineBitShiftRegister.vhd         ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/nineBitShiftRegister.vhd ;         ;
+; FPAdder_Control.vhd              ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/FPAdder_Control.vhd      ;         ;
+; FPAdder_Data.vhd                 ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/FPAdder_Data.vhd         ;         ;
+; mux2to1_8bit.vhd                 ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/mux2to1_8bit.vhd         ;         ;
+; sevenBitRegister.vhd             ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/sevenBitRegister.vhd     ;         ;
+; eightBitAdder.vhd                ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/eightBitAdder.vhd        ;         ;
+; mux2to1_7bit.vhd                 ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/mux2to1_7bit.vhd         ;         ;
+; mux2to1_10bit.vhd                ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/mux2to1_10bit.vhd        ;         ;
+; tenBitAdder.vhd                  ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/tenBitAdder.vhd          ;         ;
+; twosComp10bit_A.vhd              ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/twosComp10bit_A.vhd      ;         ;
+; twosComp10bit_B.vhd              ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/twosComp10bit_B.vhd      ;         ;
+; sevenBitComparator.vhd           ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/sevenBitComparator.vhd   ;         ;
+; fourBitDownCounter.vhd           ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/fourBitDownCounter.vhd   ;         ;
+; threeBitDownCounter.vhd          ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/threeBitDownCounter.vhd  ;         ;
+; sevenBitDownCounter.vhd          ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/sevenBitDownCounter.vhd  ;         ;
+; sevenBitUpCounter.vhd            ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/sevenBitUpCounter.vhd    ;         ;
+; FPAdder_Top.vhd                  ; yes             ; User VHDL File  ; H:/CEG3156_Lab_1_FPAdder/FPAdder_Top.vhd          ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Estimated Total logic elements              ; 7                    ;
-;                                             ;                      ;
-; Total combinational functions               ; 7                    ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 2                    ;
-;     -- 3 input functions                    ; 4                    ;
-;     -- <=2 input functions                  ; 1                    ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 7                    ;
-;     -- arithmetic mode                      ; 0                    ;
-;                                             ;                      ;
-; Total registers                             ; 3                    ;
-;     -- Dedicated logic registers            ; 3                    ;
-;     -- I/O registers                        ; 0                    ;
-;                                             ;                      ;
-; I/O pins                                    ; 11                   ;
-; Embedded Multiplier 9-bit elements          ; 0                    ;
-; Maximum fan-out node                        ; enARdFF_2:dFF0|int_q ;
-; Maximum fan-out                             ; 7                    ;
-; Total fan-out                               ; 49                   ;
-; Average fan-out                             ; 1.53                 ;
-+---------------------------------------------+----------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                    ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                            ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 5                                                                                                ;
+;                                             ;                                                                                                  ;
+; Total combinational functions               ; 5                                                                                                ;
+; Logic element usage by number of LUT inputs ;                                                                                                  ;
+;     -- 4 input functions                    ; 1                                                                                                ;
+;     -- 3 input functions                    ; 1                                                                                                ;
+;     -- <=2 input functions                  ; 3                                                                                                ;
+;                                             ;                                                                                                  ;
+; Logic elements by mode                      ;                                                                                                  ;
+;     -- normal mode                          ; 5                                                                                                ;
+;     -- arithmetic mode                      ; 0                                                                                                ;
+;                                             ;                                                                                                  ;
+; Total registers                             ; 4                                                                                                ;
+;     -- Dedicated logic registers            ; 4                                                                                                ;
+;     -- I/O registers                        ; 0                                                                                                ;
+;                                             ;                                                                                                  ;
+; I/O pins                                    ; 50                                                                                               ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                ;
+; Maximum fan-out node                        ; FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff0|int_q ;
+; Maximum fan-out                             ; 5                                                                                                ;
+; Total fan-out                               ; 79                                                                                               ;
+; Average fan-out                             ; 0.72                                                                                             ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                            ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
-; |threeBitDownCounter       ; 7 (3)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |threeBitDownCounter                   ; work         ;
-;    |enARdFF_2:dFF0|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |threeBitDownCounter|enARdFF_2:dFF0    ; work         ;
-;    |enARdFF_2:dFF1|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |threeBitDownCounter|enARdFF_2:dFF1    ; work         ;
-;    |enARdFF_2:dFF2|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |threeBitDownCounter|enARdFF_2:dFF2    ; work         ;
-;    |mux2to1_1bit:mux0|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |threeBitDownCounter|mux2to1_1bit:mux0 ; work         ;
-;    |mux2to1_1bit:mux1|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |threeBitDownCounter|mux2to1_1bit:mux1 ; work         ;
-;    |mux2to1_1bit:mux2|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |threeBitDownCounter|mux2to1_1bit:mux2 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; |FPAdder_Top                           ; 5 (1)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 50   ; 0            ; |FPAdder_Top                                                                                            ; work         ;
+;    |FPAdder_Data:Datapath|             ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPAdder_Top|FPAdder_Data:Datapath                                                                      ; work         ;
+;       |sevenBitUpCounter:sevenUpCount| ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount                                       ; work         ;
+;          |fourBitCounter:MSBfour|      ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour                ; work         ;
+;             |enARdFF_2:dff0|           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff0 ; work         ;
+;             |enARdFF_2:dff1|           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff1 ; work         ;
+;             |enARdFF_2:dff2|           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff2 ; work         ;
+;             |enARdFF_2:dff3|           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff3 ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                      ;
++-----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                                             ; Reason for Removal                          ;
++-----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+; FPAdder_Control:Controlpath|enARdFF_2:dFF1|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Control:Controlpath|enARdFF_2:dFF5|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Control:Controlpath|enARdFF_2:dFF2|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF0|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF1|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF2|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF3|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF4|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF5|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF6|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF7|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF8|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Control:Controlpath|enARdFF_2:dFF3|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF0|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF1|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF2|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF3|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF4|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF5|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF6|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF7|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF8|int_q                                  ; Stuck at GND due to stuck port clear        ;
+; FPAdder_Control:Controlpath|enARdFF_2:dFF6|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Control:Controlpath|enARdFF_2:dFF4|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF0|int_q ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF1|int_q ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF2|int_q ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Control:Controlpath|enARdFF_2:dFF7|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Control:Controlpath|enARdFF_2:dFF8|int_q                                                          ; Stuck at GND due to stuck port data_in      ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF0|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF1|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF2|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF3|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF4|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF5|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF6|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF7|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF8|int_q                                   ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff0|int_q        ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff1|int_q        ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff2|int_q        ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF0|int_q  ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF1|int_q  ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF2|int_q  ; Stuck at GND due to stuck port clock_enable ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF3|int_q  ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 45                                                                    ;                                             ;
++-----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------------------------+
+; Register name                                                                                             ; Reason for Removal             ; Registers Removed due to This Register                                                                    ;
++-----------------------------------------------------------------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------------------------+
+; FPAdder_Control:Controlpath|enARdFF_2:dFF1|int_q                                                          ; Stuck at GND                   ; FPAdder_Control:Controlpath|enARdFF_2:dFF5|int_q,                                                         ;
+;                                                                                                           ; due to stuck port data_in      ; FPAdder_Control:Controlpath|enARdFF_2:dFF2|int_q,                                                         ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF0|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF1|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF2|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF3|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF4|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF5|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF6|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF7|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF8|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Control:Controlpath|enARdFF_2:dFF3|int_q,                                                         ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF0|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF1|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF2|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF3|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF4|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF5|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF6|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF7|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF8|int_q,                                 ;
+;                                                                                                           ;                                ; FPAdder_Control:Controlpath|enARdFF_2:dFF6|int_q,                                                         ;
+;                                                                                                           ;                                ; FPAdder_Control:Controlpath|enARdFF_2:dFF4|int_q,                                                         ;
+;                                                                                                           ;                                ; FPAdder_Control:Controlpath|enARdFF_2:dFF7|int_q,                                                         ;
+;                                                                                                           ;                                ; FPAdder_Control:Controlpath|enARdFF_2:dFF8|int_q,                                                         ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF0|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF1|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF2|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF3|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF4|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF5|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF6|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF7|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF8|int_q,                                  ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff0|int_q,       ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff1|int_q,       ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff2|int_q,       ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF0|int_q, ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF1|int_q, ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF2|int_q, ;
+;                                                                                                           ;                                ; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF3|int_q  ;
+; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF0|int_q ; Stuck at GND                   ; FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF2|int_q ;
+;                                                                                                           ; due to stuck port clock_enable ;                                                                                                           ;
++-----------------------------------------------------------------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -218,14 +390,431 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3     ;
+; Total registers                              ; 4     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF9"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF8"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF7"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF6"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF5"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF4"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF3"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF2"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF1"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath|enARdFF_2:dFF0"                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_d      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Control:Controlpath"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantSum"                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_value[8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|tenBitAdder:mantAdder"                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_cin      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o_overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF0"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF1"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF2"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF3"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF4"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF5"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF6"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF7"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF8"                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_8" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; i_0  ; Input ; Info     ; Stuck at VCC                                                                 ;
+; i_1  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff0" ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff1" ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff2" ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff3" ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++--------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff0" ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                     ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.         ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff1" ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                     ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.         ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff2" ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                     ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.         ;
++--------+--------+----------+---------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount"                                 ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp6" ;
++--------------+-------+----------+-----------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                               ;
++--------------+-------+----------+-----------------------------------------------------------------------+
+; i_gtprevious ; Input ; Info     ; Stuck at GND                                                          ;
+; i_ltprevious ; Input ; Info     ; Stuck at GND                                                          ;
++--------------+-------+----------+-----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitComparator:notless9CMP"                                    ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_b[6..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_b[2..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_b[3]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_b[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_gt      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit"  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|eightBitAdder:expoAdder"                                        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; i_cin  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o_cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out" ;
++--------+-------+----------+----------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                              ;
++--------+-------+----------+----------------------------------------------------------------------+
+; i_0[7] ; Input ; Info     ; Stuck at GND                                                         ;
++--------+-------+----------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b0"                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b1"                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b2"                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b3"                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b4"                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b5"                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b6"                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "FPAdder_Data:Datapath" ;
++--------------+-------+----------+-----------------+
+; Port         ; Type  ; Severity ; Details         ;
++--------------+-------+----------+-----------------+
+; mantissaa[8] ; Input ; Info     ; Stuck at VCC    ;
+; mantissab[8] ; Input ; Info     ; Stuck at VCC    ;
++--------------+-------+----------+-----------------+
 
 
 +-------------------------------+
@@ -243,9 +832,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Feb 04 14:11:52 2026
+    Info: Processing started: Tue Feb 10 15:28:24 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CEG3156_Lab1_FPAdder -c CEG3156_Lab1_FPAdder
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file threebitcounter.vhd
+    Info (12022): Found design unit 1: threeBitCounter-rtl
+    Info (12023): Found entity 1: threeBitCounter
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitcounter.vhd
     Info (12022): Found design unit 1: fourBitCounter-rtl
     Info (12023): Found entity 1: fourBitCounter
@@ -267,9 +859,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file eightbi
 Info (12021): Found 2 design units, including 1 entities, in source file ninebitshiftregister.vhd
     Info (12022): Found design unit 1: nineBitShiftRegister-rtl
     Info (12023): Found entity 1: nineBitShiftRegister
-Info (12021): Found 2 design units, including 1 entities, in source file ceg3156_lab1_fpadder.vhd
-    Info (12022): Found design unit 1: FPAdder_Top-rtl
-    Info (12023): Found entity 1: FPAdder_Top
+Info (12021): Found 0 design units, including 0 entities, in source file ceg3156_lab1_fpadder.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file fpadder_control.vhd
     Info (12022): Found design unit 1: FPAdder_Control-rtl
     Info (12023): Found entity 1: FPAdder_Control
@@ -299,9 +889,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file eightbi
 Info (12021): Found 2 design units, including 1 entities, in source file mux2to1_7bit.vhd
     Info (12022): Found design unit 1: mux2to1_7bit-structural
     Info (12023): Found entity 1: mux2to1_7bit
-Info (12021): Found 2 design units, including 1 entities, in source file twoscomp10bit.vhd
-    Info (12022): Found design unit 1: twosComp10Bit-rtl
-    Info (12023): Found entity 1: twosComp10Bit
+Warning (12019): Can't analyze file -- file twosComp10bit.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file mux2to1_10bit.vhd
     Info (12022): Found design unit 1: mux2to1_10bit-structural
     Info (12023): Found entity 1: mux2to1_10bit
@@ -314,12 +902,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file twoscom
 Info (12021): Found 2 design units, including 1 entities, in source file twoscomp10bit_b.vhd
     Info (12022): Found design unit 1: twosComp10Bit_B-rtl
     Info (12023): Found entity 1: twosComp10Bit_B
-Info (12021): Found 2 design units, including 1 entities, in source file threebitcounter.vhd
-    Info (12022): Found design unit 1: threeBitCounter-rtl
-    Info (12023): Found entity 1: threeBitCounter
-Info (12021): Found 2 design units, including 1 entities, in source file counterupdown_4bit.vhd
-    Info (12022): Found design unit 1: counterUpDown_4bit-rtl
-    Info (12023): Found entity 1: counterUpDown_4bit
 Info (12021): Found 2 design units, including 1 entities, in source file sevenbitcomparator.vhd
     Info (12022): Found design unit 1: sevenBitComparator-rtl
     Info (12023): Found entity 1: sevenBitComparator
@@ -329,20 +911,97 @@ Info (12021): Found 2 design units, including 1 entities, in source file fourbit
 Info (12021): Found 2 design units, including 1 entities, in source file threebitdowncounter.vhd
     Info (12022): Found design unit 1: threeBitDownCounter-rtl
     Info (12023): Found entity 1: threeBitDownCounter
-Info (12127): Elaborating entity "threeBitDownCounter" for the top level hierarchy
-Info (12128): Elaborating entity "mux2to1_1bit" for hierarchy "mux2to1_1bit:mux2"
-Info (12128): Elaborating entity "enARdFF_2" for hierarchy "enARdFF_2:dFF2"
+Info (12021): Found 2 design units, including 1 entities, in source file sevenbitdowncounter.vhd
+    Info (12022): Found design unit 1: sevenBitDownCounter-rtl
+    Info (12023): Found entity 1: sevenBitDownCounter
+Info (12021): Found 2 design units, including 1 entities, in source file sevenbitupcounter.vhd
+    Info (12022): Found design unit 1: sevenBitUpCounter-rtl
+    Info (12023): Found entity 1: sevenBitUpCounter
+Info (12021): Found 2 design units, including 1 entities, in source file fpadder_top.vhd
+    Info (12022): Found design unit 1: FPAdder_Top-rtl
+    Info (12023): Found entity 1: FPAdder_Top
+Info (12127): Elaborating entity "FPAdder_Top" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at FPAdder_Top.vhd(36): used implicit default value for signal "int_clear5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "FPAdder_Data" for hierarchy "FPAdder_Data:Datapath"
+Warning (10036): Verilog HDL or VHDL warning at FPAdder_Data.vhd(18): object "overflowFlag" assigned a value but never read
+Info (12128): Elaborating entity "sevenBitRegister" for hierarchy "FPAdder_Data:Datapath|sevenBitRegister:expoAReg"
+Warning (10036): Verilog HDL or VHDL warning at sevenBitRegister.vhd(14): object "int_notValue" assigned a value but never read
+Info (12128): Elaborating entity "enARdFF_2" for hierarchy "FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b6"
+Info (12128): Elaborating entity "twosComp8Bit" for hierarchy "FPAdder_Data:Datapath|twosComp8Bit:expoAComp"
+Info (12128): Elaborating entity "mux2to1_8bit" for hierarchy "FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out"
+Info (12128): Elaborating entity "mux2to1_1bit" for hierarchy "FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux0"
+Info (12128): Elaborating entity "eightBitAdder" for hierarchy "FPAdder_Data:Datapath|eightBitAdder:expoAdder"
+Info (12128): Elaborating entity "sevenBitDownCounter" for hierarchy "FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount"
+Warning (10036): Verilog HDL or VHDL warning at sevenBitDownCounter.vhd(27): object "fourBitZeroFlag" assigned a value but never read
+Info (12128): Elaborating entity "threeBitDownCounter" for hierarchy "FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit"
+Info (12128): Elaborating entity "fourBitDownCounter" for hierarchy "FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit"
+Info (12128): Elaborating entity "sevenBitComparator" for hierarchy "FPAdder_Data:Datapath|sevenBitComparator:notless9CMP"
+Info (12128): Elaborating entity "oneBitComparator" for hierarchy "FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp6"
+Info (12128): Elaborating entity "mux2to1_7bit" for hierarchy "FPAdder_Data:Datapath|mux2to1_7bit:expoMux"
+Info (12128): Elaborating entity "sevenBitUpCounter" for hierarchy "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount"
+Info (12128): Elaborating entity "threeBitCounter" for hierarchy "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree"
+Info (12128): Elaborating entity "fourBitCounter" for hierarchy "FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour"
+Info (12128): Elaborating entity "nineBitShiftRegister" for hierarchy "FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg"
+Info (12128): Elaborating entity "twosComp10Bit_A" for hierarchy "FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp"
+Info (12128): Elaborating entity "mux2to1_10bit" for hierarchy "FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out"
+Info (12128): Elaborating entity "twosComp10Bit_B" for hierarchy "FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp"
+Info (12128): Elaborating entity "tenBitAdder" for hierarchy "FPAdder_Data:Datapath|tenBitAdder:mantAdder"
+Info (12128): Elaborating entity "FPAdder_Control" for hierarchy "FPAdder_Control:Controlpath"
+Warning (10541): VHDL Signal Declaration warning at FPAdder_Control.vhd(7): used implicit default value for signal "Load6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ExponentOut[0]" is stuck at GND
+    Warning (13410): Pin "ExponentOut[1]" is stuck at GND
+    Warning (13410): Pin "ExponentOut[2]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[0]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[1]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[2]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[3]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[4]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[5]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[6]" is stuck at GND
+    Warning (13410): Pin "MantissaOut[7]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4701 megabytes
-    Info: Processing ended: Wed Feb 04 14:12:05 2026
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:05
+Warning (21074): Design contains 30 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ExponentA[0]"
+    Warning (15610): No output dependent on input pin "ExponentA[1]"
+    Warning (15610): No output dependent on input pin "ExponentA[2]"
+    Warning (15610): No output dependent on input pin "ExponentA[3]"
+    Warning (15610): No output dependent on input pin "ExponentA[4]"
+    Warning (15610): No output dependent on input pin "ExponentA[5]"
+    Warning (15610): No output dependent on input pin "ExponentA[6]"
+    Warning (15610): No output dependent on input pin "ExponentB[0]"
+    Warning (15610): No output dependent on input pin "ExponentB[1]"
+    Warning (15610): No output dependent on input pin "ExponentB[2]"
+    Warning (15610): No output dependent on input pin "ExponentB[3]"
+    Warning (15610): No output dependent on input pin "ExponentB[4]"
+    Warning (15610): No output dependent on input pin "ExponentB[5]"
+    Warning (15610): No output dependent on input pin "ExponentB[6]"
+    Warning (15610): No output dependent on input pin "MantissaA[0]"
+    Warning (15610): No output dependent on input pin "MantissaA[1]"
+    Warning (15610): No output dependent on input pin "MantissaA[2]"
+    Warning (15610): No output dependent on input pin "MantissaA[3]"
+    Warning (15610): No output dependent on input pin "MantissaA[4]"
+    Warning (15610): No output dependent on input pin "MantissaA[5]"
+    Warning (15610): No output dependent on input pin "MantissaA[6]"
+    Warning (15610): No output dependent on input pin "MantissaA[7]"
+    Warning (15610): No output dependent on input pin "MantissaB[0]"
+    Warning (15610): No output dependent on input pin "MantissaB[1]"
+    Warning (15610): No output dependent on input pin "MantissaB[2]"
+    Warning (15610): No output dependent on input pin "MantissaB[3]"
+    Warning (15610): No output dependent on input pin "MantissaB[4]"
+    Warning (15610): No output dependent on input pin "MantissaB[5]"
+    Warning (15610): No output dependent on input pin "MantissaB[6]"
+    Warning (15610): No output dependent on input pin "MantissaB[7]"
+Info (21057): Implemented 55 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 34 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 5 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 4646 megabytes
+    Info: Processing ended: Tue Feb 10 15:28:31 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:04
 
 

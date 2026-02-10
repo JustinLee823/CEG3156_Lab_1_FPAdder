@@ -5,6 +5,7 @@ ENTITY fourBitCounter IS
     PORT(i_value : in std_logic_vector(3 downto 0);
         i_resetBar, i_enable, i_load : IN STD_LOGIC;
         i_clock : IN STD_LOGIC;
+		  o_zero : out std_logic;
         o_Z : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
 END fourBitCounter;
@@ -39,8 +40,8 @@ BEGIN
 
 	 
 	 mux3 : mux2to1_1bit
-		port map(i_0 => i_value(3),
-			i_1 => int_A(3),
+		port map(i_0 => int_A(3),
+			i_1 => i_value(3),
 			i_sel => i_load,
 			o_y => int_muxOut(3));
     dff3: enARdFF_2
@@ -54,8 +55,8 @@ BEGIN
         );
     
 	 mux2 : mux2to1_1bit
-		port map(i_0 => i_value(2),
-			i_1 => int_A(2),
+		port map(i_0 => int_A(2),
+			i_1 => i_value(2),
 			i_sel => i_load,
 			o_y => int_muxOut(2));
     dff2: enARdFF_2
@@ -69,8 +70,8 @@ BEGIN
 			);
 
 	mux1 : mux2to1_1bit
-		port map(i_0 => i_value(1),
-			i_1 => int_A(1),
+		port map(i_0 => int_A(1),
+			i_1 => i_value(1),
 			i_sel => i_load,
 			o_y => int_muxOut(1));
     dff1: enARdFF_2
@@ -84,8 +85,8 @@ BEGIN
         );
 
 	mux0 : mux2to1_1bit
-		port map(i_0 => i_value(0),
-			i_1 => int_A(0),
+		port map(i_0 => int_A(0),
+			i_1 => i_value(0),
 			i_sel => i_load,
 			o_y => int_muxOut(0));
     dff0: enARdFF_2
@@ -98,7 +99,7 @@ BEGIN
             o_qBar     => open -- connected
         );
 	
-
+	o_zero <= (not int_Z(0) and not int_Z(1) and not int_Z(2) and not int_Z(3));
     o_Z <= int_Z; --output
 
 END rtl;

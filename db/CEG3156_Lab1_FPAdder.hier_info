@@ -1,4 +1,710 @@
-|threeBitDownCounter
+|FPAdder_Top
+SignA => SignOut.IN0
+SignA => FPAdder_Data:Datapath.SignA
+SignB => SignOut.IN1
+SignB => FPAdder_Data:Datapath.SignB
+ExponentA[0] => FPAdder_Data:Datapath.ExponentA[0]
+ExponentA[1] => FPAdder_Data:Datapath.ExponentA[1]
+ExponentA[2] => FPAdder_Data:Datapath.ExponentA[2]
+ExponentA[3] => FPAdder_Data:Datapath.ExponentA[3]
+ExponentA[4] => FPAdder_Data:Datapath.ExponentA[4]
+ExponentA[5] => FPAdder_Data:Datapath.ExponentA[5]
+ExponentA[6] => FPAdder_Data:Datapath.ExponentA[6]
+ExponentB[0] => FPAdder_Data:Datapath.ExponentB[0]
+ExponentB[1] => FPAdder_Data:Datapath.ExponentB[1]
+ExponentB[2] => FPAdder_Data:Datapath.ExponentB[2]
+ExponentB[3] => FPAdder_Data:Datapath.ExponentB[3]
+ExponentB[4] => FPAdder_Data:Datapath.ExponentB[4]
+ExponentB[5] => FPAdder_Data:Datapath.ExponentB[5]
+ExponentB[6] => FPAdder_Data:Datapath.ExponentB[6]
+MantissaA[0] => FPAdder_Data:Datapath.MantissaA[0]
+MantissaA[1] => FPAdder_Data:Datapath.MantissaA[1]
+MantissaA[2] => FPAdder_Data:Datapath.MantissaA[2]
+MantissaA[3] => FPAdder_Data:Datapath.MantissaA[3]
+MantissaA[4] => FPAdder_Data:Datapath.MantissaA[4]
+MantissaA[5] => FPAdder_Data:Datapath.MantissaA[5]
+MantissaA[6] => FPAdder_Data:Datapath.MantissaA[6]
+MantissaA[7] => FPAdder_Data:Datapath.MantissaA[7]
+MantissaB[0] => FPAdder_Data:Datapath.MantissaB[0]
+MantissaB[1] => FPAdder_Data:Datapath.MantissaB[1]
+MantissaB[2] => FPAdder_Data:Datapath.MantissaB[2]
+MantissaB[3] => FPAdder_Data:Datapath.MantissaB[3]
+MantissaB[4] => FPAdder_Data:Datapath.MantissaB[4]
+MantissaB[5] => FPAdder_Data:Datapath.MantissaB[5]
+MantissaB[6] => FPAdder_Data:Datapath.MantissaB[6]
+MantissaB[7] => FPAdder_Data:Datapath.MantissaB[7]
+GClock => FPAdder_Data:Datapath.GClock
+GClock => FPAdder_Control:Controlpath.GClock
+GReset => FPAdder_Data:Datapath.GReset
+GReset => FPAdder_Control:Controlpath.GReset
+SignOut <= SignOut.DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[0] <= FPAdder_Data:Datapath.REz[0]
+ExponentOut[1] <= FPAdder_Data:Datapath.REz[1]
+ExponentOut[2] <= FPAdder_Data:Datapath.REz[2]
+ExponentOut[3] <= FPAdder_Data:Datapath.REz[3]
+ExponentOut[4] <= FPAdder_Data:Datapath.REz[4]
+ExponentOut[5] <= FPAdder_Data:Datapath.REz[5]
+ExponentOut[6] <= FPAdder_Data:Datapath.REz[6]
+MantissaOut[0] <= FPAdder_Data:Datapath.RFz[0]
+MantissaOut[1] <= FPAdder_Data:Datapath.RFz[1]
+MantissaOut[2] <= FPAdder_Data:Datapath.RFz[2]
+MantissaOut[3] <= FPAdder_Data:Datapath.RFz[3]
+MantissaOut[4] <= FPAdder_Data:Datapath.RFz[4]
+MantissaOut[5] <= FPAdder_Data:Datapath.RFz[5]
+MantissaOut[6] <= FPAdder_Data:Datapath.RFz[6]
+MantissaOut[7] <= FPAdder_Data:Datapath.RFz[7]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath
+SignA => twosComp10bit_A:mantAComp.i_signA
+SignA => twosComp10bit_B:mantBComp.i_signA
+SignB => twosComp10bit_A:mantAComp.i_signB
+SignB => twosComp10bit_B:mantBComp.i_signB
+GReset => sevenBitRegister:expoAReg.i_resetBar
+GReset => sevenBitRegister:expoBReg.i_resetBar
+GReset => sevenBitDownCounter:sevenDownCount.i_resetBar
+GReset => sevenBitUpCounter:sevenUpCount.i_resetBar
+GReset => nineBitShiftRegister:mantAReg.i_reset
+GReset => nineBitShiftRegister:mantBReg.i_reset
+GReset => nineBitShiftRegister:mantSum.i_reset
+GClock => sevenBitRegister:expoAReg.i_clock
+GClock => sevenBitRegister:expoBReg.i_clock
+GClock => sevenBitDownCounter:sevenDownCount.i_clock
+GClock => sevenBitUpCounter:sevenUpCount.i_clock
+GClock => nineBitShiftRegister:mantAReg.i_clock
+GClock => nineBitShiftRegister:mantBReg.i_clock
+GClock => nineBitShiftRegister:mantSum.i_clock
+loadExpoA => sevenBitRegister:expoAReg.i_load
+loadExpoB => sevenBitRegister:expoBReg.i_load
+loadMantA => nineBitShiftRegister:mantAReg.i_load
+loadMantB => nineBitShiftRegister:mantBReg.i_load
+loadSum => nineBitShiftRegister:mantSum.i_load
+shiftMantissaA => nineBitShiftRegister:mantAReg.i_shiftRight
+shiftMantissaB => nineBitShiftRegister:mantBReg.i_shiftRight
+shiftMantSum => nineBitShiftRegister:mantSum.i_shiftRight
+clearMantA => nineBitShiftRegister:mantAReg.i_clear
+clearMantB => nineBitShiftRegister:mantBReg.i_clear
+clearMantSum => nineBitShiftRegister:mantSum.i_clear
+load6 => sevenBitDownCounter:sevenDownCount.i_load
+load7Up => sevenBitUpCounter:sevenUpCount.i_load
+on1 => twosComp8Bit:expoAComp.i_enable
+on2 => twosComp8Bit:expoBComp.i_enable
+CountD => sevenBitDownCounter:sevenDownCount.i_enable
+CountU => sevenBitUpCounter:sevenUpCount.i_enable
+Flag_0 => mux2to1_7bit:expoMux.i_sel
+Flag_1 => ~NO_FANOUT~
+ExponentA[0] => sevenBitRegister:expoAReg.i_Value[0]
+ExponentA[1] => sevenBitRegister:expoAReg.i_Value[1]
+ExponentA[2] => sevenBitRegister:expoAReg.i_Value[2]
+ExponentA[3] => sevenBitRegister:expoAReg.i_Value[3]
+ExponentA[4] => sevenBitRegister:expoAReg.i_Value[4]
+ExponentA[5] => sevenBitRegister:expoAReg.i_Value[5]
+ExponentA[6] => sevenBitRegister:expoAReg.i_Value[6]
+ExponentB[0] => sevenBitRegister:expoBReg.i_Value[0]
+ExponentB[1] => sevenBitRegister:expoBReg.i_Value[1]
+ExponentB[2] => sevenBitRegister:expoBReg.i_Value[2]
+ExponentB[3] => sevenBitRegister:expoBReg.i_Value[3]
+ExponentB[4] => sevenBitRegister:expoBReg.i_Value[4]
+ExponentB[5] => sevenBitRegister:expoBReg.i_Value[5]
+ExponentB[6] => sevenBitRegister:expoBReg.i_Value[6]
+MantissaA[0] => nineBitShiftRegister:mantAReg.i_value[0]
+MantissaA[1] => nineBitShiftRegister:mantAReg.i_value[1]
+MantissaA[2] => nineBitShiftRegister:mantAReg.i_value[2]
+MantissaA[3] => nineBitShiftRegister:mantAReg.i_value[3]
+MantissaA[4] => nineBitShiftRegister:mantAReg.i_value[4]
+MantissaA[5] => nineBitShiftRegister:mantAReg.i_value[5]
+MantissaA[6] => nineBitShiftRegister:mantAReg.i_value[6]
+MantissaA[7] => nineBitShiftRegister:mantAReg.i_value[7]
+MantissaA[8] => nineBitShiftRegister:mantAReg.i_value[8]
+MantissaB[0] => nineBitShiftRegister:mantBReg.i_value[0]
+MantissaB[1] => nineBitShiftRegister:mantBReg.i_value[1]
+MantissaB[2] => nineBitShiftRegister:mantBReg.i_value[2]
+MantissaB[3] => nineBitShiftRegister:mantBReg.i_value[3]
+MantissaB[4] => nineBitShiftRegister:mantBReg.i_value[4]
+MantissaB[5] => nineBitShiftRegister:mantBReg.i_value[5]
+MantissaB[6] => nineBitShiftRegister:mantBReg.i_value[6]
+MantissaB[7] => nineBitShiftRegister:mantBReg.i_value[7]
+MantissaB[8] => nineBitShiftRegister:mantBReg.i_value[8]
+Zero <= sevenBitDownCounter:sevenDownCount.o_zero
+notless9 <= sevenBitComparator:notless9CMP.o_LT
+Sign2 <= tenBitAdder:mantAdder.o_Value[8]
+Sign1 <= eightBitAdder:expoAdder.o_Value[7]
+countFz <= tenBitAdder:mantAdder.o_cout
+REz[0] <= sevenBitUpCounter:sevenUpCount.o_Z[0]
+REz[1] <= sevenBitUpCounter:sevenUpCount.o_Z[1]
+REz[2] <= sevenBitUpCounter:sevenUpCount.o_Z[2]
+REz[3] <= sevenBitUpCounter:sevenUpCount.o_Z[3]
+REz[4] <= sevenBitUpCounter:sevenUpCount.o_Z[4]
+REz[5] <= sevenBitUpCounter:sevenUpCount.o_Z[5]
+REz[6] <= sevenBitUpCounter:sevenUpCount.o_Z[6]
+RFz[0] <= nineBitShiftRegister:mantSum.o_value[0]
+RFz[1] <= nineBitShiftRegister:mantSum.o_value[1]
+RFz[2] <= nineBitShiftRegister:mantSum.o_value[2]
+RFz[3] <= nineBitShiftRegister:mantSum.o_value[3]
+RFz[4] <= nineBitShiftRegister:mantSum.o_value[4]
+RFz[5] <= nineBitShiftRegister:mantSum.o_value[5]
+RFz[6] <= nineBitShiftRegister:mantSum.o_value[6]
+RFz[7] <= nineBitShiftRegister:mantSum.o_value[7]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg
+i_resetBar => enARdFF_2:b6.i_resetBar
+i_resetBar => enARdFF_2:b5.i_resetBar
+i_resetBar => enARdFF_2:b4.i_resetBar
+i_resetBar => enARdFF_2:b3.i_resetBar
+i_resetBar => enARdFF_2:b2.i_resetBar
+i_resetBar => enARdFF_2:b1.i_resetBar
+i_resetBar => enARdFF_2:b0.i_resetBar
+i_load => enARdFF_2:b6.i_enable
+i_load => enARdFF_2:b5.i_enable
+i_load => enARdFF_2:b4.i_enable
+i_load => enARdFF_2:b3.i_enable
+i_load => enARdFF_2:b2.i_enable
+i_load => enARdFF_2:b1.i_enable
+i_load => enARdFF_2:b0.i_enable
+i_clock => enARdFF_2:b6.i_clock
+i_clock => enARdFF_2:b5.i_clock
+i_clock => enARdFF_2:b4.i_clock
+i_clock => enARdFF_2:b3.i_clock
+i_clock => enARdFF_2:b2.i_clock
+i_clock => enARdFF_2:b1.i_clock
+i_clock => enARdFF_2:b0.i_clock
+i_Value[0] => enARdFF_2:b0.i_d
+i_Value[1] => enARdFF_2:b1.i_d
+i_Value[2] => enARdFF_2:b2.i_d
+i_Value[3] => enARdFF_2:b3.i_d
+i_Value[4] => enARdFF_2:b4.i_d
+i_Value[5] => enARdFF_2:b5.i_d
+i_Value[6] => enARdFF_2:b6.i_d
+o_Value[0] <= enARdFF_2:b0.o_q
+o_Value[1] <= enARdFF_2:b1.o_q
+o_Value[2] <= enARdFF_2:b2.o_q
+o_Value[3] <= enARdFF_2:b3.o_q
+o_Value[4] <= enARdFF_2:b4.o_q
+o_Value[5] <= enARdFF_2:b5.o_q
+o_Value[6] <= enARdFF_2:b6.o_q
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoAReg|enARdFF_2:b0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg
+i_resetBar => enARdFF_2:b6.i_resetBar
+i_resetBar => enARdFF_2:b5.i_resetBar
+i_resetBar => enARdFF_2:b4.i_resetBar
+i_resetBar => enARdFF_2:b3.i_resetBar
+i_resetBar => enARdFF_2:b2.i_resetBar
+i_resetBar => enARdFF_2:b1.i_resetBar
+i_resetBar => enARdFF_2:b0.i_resetBar
+i_load => enARdFF_2:b6.i_enable
+i_load => enARdFF_2:b5.i_enable
+i_load => enARdFF_2:b4.i_enable
+i_load => enARdFF_2:b3.i_enable
+i_load => enARdFF_2:b2.i_enable
+i_load => enARdFF_2:b1.i_enable
+i_load => enARdFF_2:b0.i_enable
+i_clock => enARdFF_2:b6.i_clock
+i_clock => enARdFF_2:b5.i_clock
+i_clock => enARdFF_2:b4.i_clock
+i_clock => enARdFF_2:b3.i_clock
+i_clock => enARdFF_2:b2.i_clock
+i_clock => enARdFF_2:b1.i_clock
+i_clock => enARdFF_2:b0.i_clock
+i_Value[0] => enARdFF_2:b0.i_d
+i_Value[1] => enARdFF_2:b1.i_d
+i_Value[2] => enARdFF_2:b2.i_d
+i_Value[3] => enARdFF_2:b3.i_d
+i_Value[4] => enARdFF_2:b4.i_d
+i_Value[5] => enARdFF_2:b5.i_d
+i_Value[6] => enARdFF_2:b6.i_d
+o_Value[0] <= enARdFF_2:b0.o_q
+o_Value[1] <= enARdFF_2:b1.o_q
+o_Value[2] <= enARdFF_2:b2.o_q
+o_Value[3] <= enARdFF_2:b3.o_q
+o_Value[4] <= enARdFF_2:b4.o_q
+o_Value[5] <= enARdFF_2:b5.o_q
+o_Value[6] <= enARdFF_2:b6.o_q
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg|enARdFF_2:b6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg|enARdFF_2:b5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg|enARdFF_2:b4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg|enARdFF_2:b3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg|enARdFF_2:b2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg|enARdFF_2:b1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitRegister:expoBReg|enARdFF_2:b0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp
+i_enable => mux2to1_8bit:select_out.i_sel
+i_Value[0] => mux2to1_8bit:select_out.i_0[0]
+i_Value[0] => carry[5].IN1
+i_Value[0] => mux2to1_8bit:select_out.i_1[0]
+i_Value[0] => invert_carry[1].IN0
+i_Value[0] => carry[2].IN0
+i_Value[1] => mux2to1_8bit:select_out.i_0[1]
+i_Value[1] => invert_carry[1].IN1
+i_Value[1] => carry[2].IN1
+i_Value[1] => carry[6].IN1
+i_Value[2] => mux2to1_8bit:select_out.i_0[2]
+i_Value[2] => invert_carry[2].IN1
+i_Value[2] => carry[3].IN1
+i_Value[2] => carry[7].IN1
+i_Value[3] => mux2to1_8bit:select_out.i_0[3]
+i_Value[3] => invert_carry[3].IN1
+i_Value[3] => carry[4].IN1
+i_Value[4] => mux2to1_8bit:select_out.i_0[4]
+i_Value[4] => invert_carry[4].IN1
+i_Value[5] => mux2to1_8bit:select_out.i_0[5]
+i_Value[5] => invert_carry[5].IN1
+i_Value[6] => mux2to1_8bit:select_out.i_0[6]
+i_Value[6] => invert_carry[6].IN1
+o_Value[0] <= mux2to1_8bit:select_out.o_y[0]
+o_Value[1] <= mux2to1_8bit:select_out.o_y[1]
+o_Value[2] <= mux2to1_8bit:select_out.o_y[2]
+o_Value[3] <= mux2to1_8bit:select_out.o_y[3]
+o_Value[4] <= mux2to1_8bit:select_out.o_y[4]
+o_Value[5] <= mux2to1_8bit:select_out.o_y[5]
+o_Value[6] <= mux2to1_8bit:select_out.o_y[6]
+o_Value[7] <= mux2to1_8bit:select_out.o_y[7]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out
+i_0[0] => mux2to1_1bit:mux0.i_0
+i_0[1] => mux2to1_1bit:mux1.i_0
+i_0[2] => mux2to1_1bit:mux2.i_0
+i_0[3] => mux2to1_1bit:mux3.i_0
+i_0[4] => mux2to1_1bit:mux4.i_0
+i_0[5] => mux2to1_1bit:mux5.i_0
+i_0[6] => mux2to1_1bit:mux6.i_0
+i_0[7] => mux2to1_1bit:mux7.i_0
+i_1[0] => mux2to1_1bit:mux0.i_1
+i_1[1] => mux2to1_1bit:mux1.i_1
+i_1[2] => mux2to1_1bit:mux2.i_1
+i_1[3] => mux2to1_1bit:mux3.i_1
+i_1[4] => mux2to1_1bit:mux4.i_1
+i_1[5] => mux2to1_1bit:mux5.i_1
+i_1[6] => mux2to1_1bit:mux6.i_1
+i_1[7] => mux2to1_1bit:mux7.i_1
+i_sel => mux2to1_1bit:mux0.i_sel
+i_sel => mux2to1_1bit:mux1.i_sel
+i_sel => mux2to1_1bit:mux2.i_sel
+i_sel => mux2to1_1bit:mux3.i_sel
+i_sel => mux2to1_1bit:mux4.i_sel
+i_sel => mux2to1_1bit:mux5.i_sel
+i_sel => mux2to1_1bit:mux6.i_sel
+i_sel => mux2to1_1bit:mux7.i_sel
+o_y[0] <= mux2to1_1bit:mux0.o_y
+o_y[1] <= mux2to1_1bit:mux1.o_y
+o_y[2] <= mux2to1_1bit:mux2.o_y
+o_y[3] <= mux2to1_1bit:mux3.o_y
+o_y[4] <= mux2to1_1bit:mux4.o_y
+o_y[5] <= mux2to1_1bit:mux5.o_y
+o_y[6] <= mux2to1_1bit:mux6.o_y
+o_y[7] <= mux2to1_1bit:mux7.o_y
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoAComp|mux2to1_8bit:select_out|mux2to1_1bit:mux7
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp
+i_enable => mux2to1_8bit:select_out.i_sel
+i_Value[0] => mux2to1_8bit:select_out.i_0[0]
+i_Value[0] => carry[5].IN1
+i_Value[0] => mux2to1_8bit:select_out.i_1[0]
+i_Value[0] => invert_carry[1].IN0
+i_Value[0] => carry[2].IN0
+i_Value[1] => mux2to1_8bit:select_out.i_0[1]
+i_Value[1] => invert_carry[1].IN1
+i_Value[1] => carry[2].IN1
+i_Value[1] => carry[6].IN1
+i_Value[2] => mux2to1_8bit:select_out.i_0[2]
+i_Value[2] => invert_carry[2].IN1
+i_Value[2] => carry[3].IN1
+i_Value[2] => carry[7].IN1
+i_Value[3] => mux2to1_8bit:select_out.i_0[3]
+i_Value[3] => invert_carry[3].IN1
+i_Value[3] => carry[4].IN1
+i_Value[4] => mux2to1_8bit:select_out.i_0[4]
+i_Value[4] => invert_carry[4].IN1
+i_Value[5] => mux2to1_8bit:select_out.i_0[5]
+i_Value[5] => invert_carry[5].IN1
+i_Value[6] => mux2to1_8bit:select_out.i_0[6]
+i_Value[6] => invert_carry[6].IN1
+o_Value[0] <= mux2to1_8bit:select_out.o_y[0]
+o_Value[1] <= mux2to1_8bit:select_out.o_y[1]
+o_Value[2] <= mux2to1_8bit:select_out.o_y[2]
+o_Value[3] <= mux2to1_8bit:select_out.o_y[3]
+o_Value[4] <= mux2to1_8bit:select_out.o_y[4]
+o_Value[5] <= mux2to1_8bit:select_out.o_y[5]
+o_Value[6] <= mux2to1_8bit:select_out.o_y[6]
+o_Value[7] <= mux2to1_8bit:select_out.o_y[7]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out
+i_0[0] => mux2to1_1bit:mux0.i_0
+i_0[1] => mux2to1_1bit:mux1.i_0
+i_0[2] => mux2to1_1bit:mux2.i_0
+i_0[3] => mux2to1_1bit:mux3.i_0
+i_0[4] => mux2to1_1bit:mux4.i_0
+i_0[5] => mux2to1_1bit:mux5.i_0
+i_0[6] => mux2to1_1bit:mux6.i_0
+i_0[7] => mux2to1_1bit:mux7.i_0
+i_1[0] => mux2to1_1bit:mux0.i_1
+i_1[1] => mux2to1_1bit:mux1.i_1
+i_1[2] => mux2to1_1bit:mux2.i_1
+i_1[3] => mux2to1_1bit:mux3.i_1
+i_1[4] => mux2to1_1bit:mux4.i_1
+i_1[5] => mux2to1_1bit:mux5.i_1
+i_1[6] => mux2to1_1bit:mux6.i_1
+i_1[7] => mux2to1_1bit:mux7.i_1
+i_sel => mux2to1_1bit:mux0.i_sel
+i_sel => mux2to1_1bit:mux1.i_sel
+i_sel => mux2to1_1bit:mux2.i_sel
+i_sel => mux2to1_1bit:mux3.i_sel
+i_sel => mux2to1_1bit:mux4.i_sel
+i_sel => mux2to1_1bit:mux5.i_sel
+i_sel => mux2to1_1bit:mux6.i_sel
+i_sel => mux2to1_1bit:mux7.i_sel
+o_y[0] <= mux2to1_1bit:mux0.o_y
+o_y[1] <= mux2to1_1bit:mux1.o_y
+o_y[2] <= mux2to1_1bit:mux2.o_y
+o_y[3] <= mux2to1_1bit:mux3.o_y
+o_y[4] <= mux2to1_1bit:mux4.o_y
+o_y[5] <= mux2to1_1bit:mux5.o_y
+o_y[6] <= mux2to1_1bit:mux6.o_y
+o_y[7] <= mux2to1_1bit:mux7.o_y
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp8Bit:expoBComp|mux2to1_8bit:select_out|mux2to1_1bit:mux7
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|eightBitAdder:expoAdder
+i_a[0] => o_Value.IN0
+i_a[0] => carry.IN0
+i_a[0] => carry.IN0
+i_a[1] => o_Value.IN0
+i_a[1] => carry.IN0
+i_a[1] => carry.IN1
+i_a[2] => o_Value.IN0
+i_a[2] => carry.IN0
+i_a[2] => carry.IN1
+i_a[3] => o_Value.IN0
+i_a[3] => carry.IN0
+i_a[3] => carry.IN1
+i_a[4] => o_Value.IN0
+i_a[4] => carry.IN0
+i_a[4] => carry.IN1
+i_a[5] => o_Value.IN0
+i_a[5] => carry.IN0
+i_a[5] => carry.IN1
+i_a[6] => o_Value.IN0
+i_a[6] => carry.IN0
+i_a[6] => carry.IN1
+i_a[7] => o_Value.IN0
+i_a[7] => carry.IN0
+i_a[7] => carry.IN1
+i_b[0] => o_Value.IN1
+i_b[0] => carry.IN1
+i_b[0] => carry.IN0
+i_b[1] => o_Value.IN1
+i_b[1] => carry.IN1
+i_b[1] => carry.IN1
+i_b[2] => o_Value.IN1
+i_b[2] => carry.IN1
+i_b[2] => carry.IN1
+i_b[3] => o_Value.IN1
+i_b[3] => carry.IN1
+i_b[3] => carry.IN1
+i_b[4] => o_Value.IN1
+i_b[4] => carry.IN1
+i_b[4] => carry.IN1
+i_b[5] => o_Value.IN1
+i_b[5] => carry.IN1
+i_b[5] => carry.IN1
+i_b[6] => o_Value.IN1
+i_b[6] => carry.IN1
+i_b[6] => carry.IN1
+i_b[7] => o_Value.IN1
+i_b[7] => carry.IN1
+i_b[7] => carry.IN1
+i_cin => o_Value.IN1
+i_cin => carry.IN1
+i_cin => carry.IN1
+o_cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[0] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[1] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[2] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[3] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[4] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[5] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[6] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[7] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount
+i_value[0] => threeBitDownCounter:LSB3Bit.i_value[0]
+i_value[1] => threeBitDownCounter:LSB3Bit.i_value[1]
+i_value[2] => threeBitDownCounter:LSB3Bit.i_value[2]
+i_value[3] => fourBitDownCounter:MSB4Bit.i_value[0]
+i_value[4] => fourBitDownCounter:MSB4Bit.i_value[1]
+i_value[5] => fourBitDownCounter:MSB4Bit.i_value[2]
+i_value[6] => fourBitDownCounter:MSB4Bit.i_value[3]
+i_resetBar => threeBitDownCounter:LSB3Bit.i_resetBar
+i_resetBar => fourBitDownCounter:MSB4Bit.i_resetBar
+i_clock => threeBitDownCounter:LSB3Bit.i_clock
+i_clock => fourBitDownCounter:MSB4Bit.i_clock
+i_load => threeBitDownCounter:LSB3Bit.i_load
+i_load => fourBitDownCounter:MSB4Bit.i_load
+i_enable => msbEnable.IN1
+i_enable => threeBitDownCounter:LSB3Bit.i_enable
+o_zero <= threeBitDownCounter:LSB3Bit.o_zero
+o_Z[0] <= threeBitDownCounter:LSB3Bit.o_Z[0]
+o_Z[1] <= threeBitDownCounter:LSB3Bit.o_Z[1]
+o_Z[2] <= threeBitDownCounter:LSB3Bit.o_Z[2]
+o_Z[3] <= fourBitDownCounter:MSB4Bit.o_Z[0]
+o_Z[4] <= fourBitDownCounter:MSB4Bit.o_Z[1]
+o_Z[5] <= fourBitDownCounter:MSB4Bit.o_Z[2]
+o_Z[6] <= fourBitDownCounter:MSB4Bit.o_Z[3]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit
 i_value[0] => mux2to1_1bit:mux0.i_1
 i_value[1] => mux2to1_1bit:mux1.i_1
 i_value[2] => mux2to1_1bit:mux2.i_1
@@ -20,7 +726,7 @@ o_Z[1] <= int_next[1].DB_MAX_OUTPUT_PORT_TYPE
 o_Z[2] <= int_next[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|threeBitDownCounter|mux2to1_1bit:mux2
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|mux2to1_1bit:mux2
 i_0 => o_y.IN0
 i_1 => o_y.IN0
 i_sel => o_y.IN1
@@ -28,7 +734,7 @@ i_sel => o_y.IN1
 o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|threeBitDownCounter|enARdFF_2:dFF2
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF2
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -37,7 +743,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|threeBitDownCounter|mux2to1_1bit:mux1
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|mux2to1_1bit:mux1
 i_0 => o_y.IN0
 i_1 => o_y.IN0
 i_sel => o_y.IN1
@@ -45,7 +751,7 @@ i_sel => o_y.IN1
 o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|threeBitDownCounter|enARdFF_2:dFF1
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF1
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -54,7 +760,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|threeBitDownCounter|mux2to1_1bit:mux0
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|mux2to1_1bit:mux0
 i_0 => o_y.IN0
 i_1 => o_y.IN0
 i_sel => o_y.IN1
@@ -62,7 +768,1763 @@ i_sel => o_y.IN1
 o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|threeBitDownCounter|enARdFF_2:dFF0
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|threeBitDownCounter:LSB3Bit|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit
+i_value[0] => mux2to1_1bit:mux0.i_1
+i_value[1] => mux2to1_1bit:mux1.i_1
+i_value[2] => mux2to1_1bit:mux2.i_1
+i_value[3] => mux2to1_1bit:mux3.i_1
+i_resetBar => enardFF_2:dFF3.i_resetBar
+i_resetBar => enardFF_2:dFF2.i_resetBar
+i_resetBar => enardFF_2:dFF1.i_resetBar
+i_resetBar => enardFF_2:dFF0.i_resetBar
+i_enable => comb.IN0
+i_enable => comb.IN0
+i_enable => comb.IN0
+i_enable => comb.IN0
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => mux2to1_1bit:mux3.i_sel
+i_load => mux2to1_1bit:mux2.i_sel
+i_load => mux2to1_1bit:mux1.i_sel
+i_load => mux2to1_1bit:mux0.i_sel
+i_clock => enardFF_2:dFF3.i_clock
+i_clock => enardFF_2:dFF2.i_clock
+i_clock => enardFF_2:dFF1.i_clock
+i_clock => enardFF_2:dFF0.i_clock
+o_zero <= o_zero.DB_MAX_OUTPUT_PORT_TYPE
+o_Z[0] <= int_next[0].DB_MAX_OUTPUT_PORT_TYPE
+o_Z[1] <= int_next[1].DB_MAX_OUTPUT_PORT_TYPE
+o_Z[2] <= int_next[2].DB_MAX_OUTPUT_PORT_TYPE
+o_Z[3] <= int_next[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|mux2to1_1bit:mux3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitDownCounter:sevenDownCount|fourBitDownCounter:MSB4Bit|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP
+i_A[0] => oneBitComparator:comp0.i_Ai
+i_A[1] => oneBitComparator:comp1.i_Ai
+i_A[2] => oneBitComparator:comp2.i_Ai
+i_A[3] => oneBitComparator:comp3.i_Ai
+i_A[4] => oneBitComparator:comp4.i_Ai
+i_A[5] => oneBitComparator:comp5.i_Ai
+i_A[6] => oneBitComparator:comp6.i_Ai
+i_B[0] => oneBitComparator:comp0.i_Bi
+i_B[1] => oneBitComparator:comp1.i_Bi
+i_B[2] => oneBitComparator:comp2.i_Bi
+i_B[3] => oneBitComparator:comp3.i_Bi
+i_B[4] => oneBitComparator:comp4.i_Bi
+i_B[5] => oneBitComparator:comp5.i_Bi
+i_B[6] => oneBitComparator:comp6.i_Bi
+o_GT <= oneBitComparator:comp0.o_GT
+o_LT <= oneBitComparator:comp0.o_LT
+o_EQ <= o_EQ.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp6
+i_GTPrevious => int_GT2.IN0
+i_GTPrevious => int_GT1.IN0
+i_GTPrevious => int_LT2.IN0
+i_LTPrevious => int_LT2.IN1
+i_LTPrevious => int_GT1.IN1
+i_LTPrevious => int_GT2.IN1
+i_Ai => int_GT1.IN1
+i_Ai => int_LT1.IN1
+i_Bi => int_LT1.IN1
+i_Bi => int_GT1.IN1
+o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
+o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp5
+i_GTPrevious => int_GT2.IN0
+i_GTPrevious => int_GT1.IN0
+i_GTPrevious => int_LT2.IN0
+i_LTPrevious => int_LT2.IN1
+i_LTPrevious => int_GT1.IN1
+i_LTPrevious => int_GT2.IN1
+i_Ai => int_GT1.IN1
+i_Ai => int_LT1.IN1
+i_Bi => int_LT1.IN1
+i_Bi => int_GT1.IN1
+o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
+o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp4
+i_GTPrevious => int_GT2.IN0
+i_GTPrevious => int_GT1.IN0
+i_GTPrevious => int_LT2.IN0
+i_LTPrevious => int_LT2.IN1
+i_LTPrevious => int_GT1.IN1
+i_LTPrevious => int_GT2.IN1
+i_Ai => int_GT1.IN1
+i_Ai => int_LT1.IN1
+i_Bi => int_LT1.IN1
+i_Bi => int_GT1.IN1
+o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
+o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp3
+i_GTPrevious => int_GT2.IN0
+i_GTPrevious => int_GT1.IN0
+i_GTPrevious => int_LT2.IN0
+i_LTPrevious => int_LT2.IN1
+i_LTPrevious => int_GT1.IN1
+i_LTPrevious => int_GT2.IN1
+i_Ai => int_GT1.IN1
+i_Ai => int_LT1.IN1
+i_Bi => int_LT1.IN1
+i_Bi => int_GT1.IN1
+o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
+o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp2
+i_GTPrevious => int_GT2.IN0
+i_GTPrevious => int_GT1.IN0
+i_GTPrevious => int_LT2.IN0
+i_LTPrevious => int_LT2.IN1
+i_LTPrevious => int_GT1.IN1
+i_LTPrevious => int_GT2.IN1
+i_Ai => int_GT1.IN1
+i_Ai => int_LT1.IN1
+i_Bi => int_LT1.IN1
+i_Bi => int_GT1.IN1
+o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
+o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp1
+i_GTPrevious => int_GT2.IN0
+i_GTPrevious => int_GT1.IN0
+i_GTPrevious => int_LT2.IN0
+i_LTPrevious => int_LT2.IN1
+i_LTPrevious => int_GT1.IN1
+i_LTPrevious => int_GT2.IN1
+i_Ai => int_GT1.IN1
+i_Ai => int_LT1.IN1
+i_Bi => int_LT1.IN1
+i_Bi => int_GT1.IN1
+o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
+o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitComparator:notless9CMP|oneBitComparator:comp0
+i_GTPrevious => int_GT2.IN0
+i_GTPrevious => int_GT1.IN0
+i_GTPrevious => int_LT2.IN0
+i_LTPrevious => int_LT2.IN1
+i_LTPrevious => int_GT1.IN1
+i_LTPrevious => int_GT2.IN1
+i_Ai => int_GT1.IN1
+i_Ai => int_LT1.IN1
+i_Bi => int_LT1.IN1
+i_Bi => int_GT1.IN1
+o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
+o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux
+i_0[0] => mux2to1_1bit:mux0.i_0
+i_0[1] => mux2to1_1bit:mux1.i_0
+i_0[2] => mux2to1_1bit:mux2.i_0
+i_0[3] => mux2to1_1bit:mux3.i_0
+i_0[4] => mux2to1_1bit:mux4.i_0
+i_0[5] => mux2to1_1bit:mux5.i_0
+i_0[6] => mux2to1_1bit:mux6.i_0
+i_1[0] => mux2to1_1bit:mux0.i_1
+i_1[1] => mux2to1_1bit:mux1.i_1
+i_1[2] => mux2to1_1bit:mux2.i_1
+i_1[3] => mux2to1_1bit:mux3.i_1
+i_1[4] => mux2to1_1bit:mux4.i_1
+i_1[5] => mux2to1_1bit:mux5.i_1
+i_1[6] => mux2to1_1bit:mux6.i_1
+i_sel => mux2to1_1bit:mux0.i_sel
+i_sel => mux2to1_1bit:mux1.i_sel
+i_sel => mux2to1_1bit:mux2.i_sel
+i_sel => mux2to1_1bit:mux3.i_sel
+i_sel => mux2to1_1bit:mux4.i_sel
+i_sel => mux2to1_1bit:mux5.i_sel
+i_sel => mux2to1_1bit:mux6.i_sel
+o_y[0] <= mux2to1_1bit:mux0.o_y
+o_y[1] <= mux2to1_1bit:mux1.o_y
+o_y[2] <= mux2to1_1bit:mux2.o_y
+o_y[3] <= mux2to1_1bit:mux3.o_y
+o_y[4] <= mux2to1_1bit:mux4.o_y
+o_y[5] <= mux2to1_1bit:mux5.o_y
+o_y[6] <= mux2to1_1bit:mux6.o_y
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux|mux2to1_1bit:mux3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux|mux2to1_1bit:mux4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux|mux2to1_1bit:mux5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|mux2to1_7bit:expoMux|mux2to1_1bit:mux6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount
+i_value[0] => threeBitCounter:LSBthree.i_value[0]
+i_value[1] => threeBitCounter:LSBthree.i_value[1]
+i_value[2] => threeBitCounter:LSBthree.i_value[2]
+i_value[3] => fourBitCounter:MSBfour.i_value[0]
+i_value[4] => fourBitCounter:MSBfour.i_value[1]
+i_value[5] => fourBitCounter:MSBfour.i_value[2]
+i_value[6] => fourBitCounter:MSBfour.i_value[3]
+i_resetBar => threeBitCounter:LSBthree.i_resetBar
+i_resetBar => fourBitCounter:MSBfour.i_resetBar
+i_enable => threeBitCounter:LSBthree.i_enable
+i_load => comb.IN1
+i_load => threeBitCounter:LSBthree.i_load
+i_load => fourBitCounter:MSBfour.i_load
+i_clock => threeBitCounter:LSBthree.i_clock
+i_clock => fourBitCounter:MSBfour.i_clock
+o_zero <= fourBitCounter:MSBfour.o_zero
+o_Z[0] <= threeBitCounter:LSBthree.o_Z[0]
+o_Z[1] <= threeBitCounter:LSBthree.o_Z[1]
+o_Z[2] <= threeBitCounter:LSBthree.o_Z[2]
+o_Z[3] <= fourBitCounter:MSBfour.o_Z[0]
+o_Z[4] <= fourBitCounter:MSBfour.o_Z[1]
+o_Z[5] <= fourBitCounter:MSBfour.o_Z[2]
+o_Z[6] <= fourBitCounter:MSBfour.o_Z[3]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree
+i_value[0] => mux2to1_1bit:mux0.i_1
+i_value[1] => mux2to1_1bit:mux1.i_1
+i_value[2] => mux2to1_1bit:mux2.i_1
+i_resetBar => enARdFF_2:dff2.i_resetBar
+i_resetBar => enARdFF_2:dff1.i_resetBar
+i_resetBar => enARdFF_2:dff0.i_resetBar
+i_enable => enARdFF_2:dff2.i_enable
+i_enable => enARdFF_2:dff1.i_enable
+i_enable => enARdFF_2:dff0.i_enable
+i_load => mux2to1_1bit:mux2.i_sel
+i_load => mux2to1_1bit:mux1.i_sel
+i_load => mux2to1_1bit:mux0.i_sel
+i_clock => enARdFF_2:dff2.i_clock
+i_clock => enARdFF_2:dff1.i_clock
+i_clock => enARdFF_2:dff0.i_clock
+o_zero <= o_zero.DB_MAX_OUTPUT_PORT_TYPE
+o_Z[0] <= enARdFF_2:dff0.o_q
+o_Z[1] <= enARdFF_2:dff1.o_q
+o_Z[2] <= enARdFF_2:dff2.o_q
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|threeBitCounter:LSBthree|enARdFF_2:dff0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour
+i_value[0] => mux2to1_1bit:mux0.i_1
+i_value[1] => mux2to1_1bit:mux1.i_1
+i_value[2] => mux2to1_1bit:mux2.i_1
+i_value[3] => mux2to1_1bit:mux3.i_1
+i_resetBar => enARdFF_2:dff3.i_resetBar
+i_resetBar => enARdFF_2:dff2.i_resetBar
+i_resetBar => enARdFF_2:dff1.i_resetBar
+i_resetBar => enARdFF_2:dff0.i_resetBar
+i_enable => enARdFF_2:dff3.i_enable
+i_enable => enARdFF_2:dff2.i_enable
+i_enable => enARdFF_2:dff1.i_enable
+i_enable => enARdFF_2:dff0.i_enable
+i_load => mux2to1_1bit:mux3.i_sel
+i_load => mux2to1_1bit:mux2.i_sel
+i_load => mux2to1_1bit:mux1.i_sel
+i_load => mux2to1_1bit:mux0.i_sel
+i_clock => enARdFF_2:dff3.i_clock
+i_clock => enARdFF_2:dff2.i_clock
+i_clock => enARdFF_2:dff1.i_clock
+i_clock => enARdFF_2:dff0.i_clock
+o_zero <= o_zero.DB_MAX_OUTPUT_PORT_TYPE
+o_Z[0] <= enARdFF_2:dff0.o_q
+o_Z[1] <= enARdFF_2:dff1.o_q
+o_Z[2] <= enARdFF_2:dff2.o_q
+o_Z[3] <= enARdFF_2:dff3.o_q
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|mux2to1_1bit:mux3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|sevenBitUpCounter:sevenUpCount|fourBitCounter:MSBfour|enARdFF_2:dff0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_clock => enardFF_2:dFF8.i_clock
+i_clock => enardFF_2:dFF7.i_clock
+i_clock => enardFF_2:dFF6.i_clock
+i_clock => enardFF_2:dFF5.i_clock
+i_clock => enardFF_2:dFF4.i_clock
+i_clock => enardFF_2:dFF3.i_clock
+i_clock => enardFF_2:dFF2.i_clock
+i_clock => enardFF_2:dFF1.i_clock
+i_clock => enardFF_2:dFF0.i_clock
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => mux2to1_1bit:mux2to1_8.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_7.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_6.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_5.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_4.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_3.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_2.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_1.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_0.i_sel
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_value[0] => mux2to1_1bit:mux2to1_0.i_0
+i_value[1] => mux2to1_1bit:mux2to1_1.i_0
+i_value[2] => mux2to1_1bit:mux2to1_2.i_0
+i_value[3] => mux2to1_1bit:mux2to1_3.i_0
+i_value[4] => mux2to1_1bit:mux2to1_4.i_0
+i_value[5] => mux2to1_1bit:mux2to1_5.i_0
+i_value[6] => mux2to1_1bit:mux2to1_6.i_0
+i_value[7] => mux2to1_1bit:mux2to1_7.i_0
+i_value[8] => ~NO_FANOUT~
+o_value[0] <= enardFF_2:dFF0.o_q
+o_value[1] <= enardFF_2:dFF1.o_q
+o_value[2] <= enardFF_2:dFF2.o_q
+o_value[3] <= enardFF_2:dFF3.o_q
+o_value[4] <= enardFF_2:dFF4.o_q
+o_value[5] <= enardFF_2:dFF5.o_q
+o_value[6] <= enardFF_2:dFF6.o_q
+o_value[7] <= enardFF_2:dFF7.o_q
+o_value[8] <= enardFF_2:dFF8.o_q
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_8
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF8
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_7
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|mux2to1_1bit:mux2to1_0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantAReg|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_clock => enardFF_2:dFF8.i_clock
+i_clock => enardFF_2:dFF7.i_clock
+i_clock => enardFF_2:dFF6.i_clock
+i_clock => enardFF_2:dFF5.i_clock
+i_clock => enardFF_2:dFF4.i_clock
+i_clock => enardFF_2:dFF3.i_clock
+i_clock => enardFF_2:dFF2.i_clock
+i_clock => enardFF_2:dFF1.i_clock
+i_clock => enardFF_2:dFF0.i_clock
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => mux2to1_1bit:mux2to1_8.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_7.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_6.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_5.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_4.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_3.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_2.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_1.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_0.i_sel
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_value[0] => mux2to1_1bit:mux2to1_0.i_0
+i_value[1] => mux2to1_1bit:mux2to1_1.i_0
+i_value[2] => mux2to1_1bit:mux2to1_2.i_0
+i_value[3] => mux2to1_1bit:mux2to1_3.i_0
+i_value[4] => mux2to1_1bit:mux2to1_4.i_0
+i_value[5] => mux2to1_1bit:mux2to1_5.i_0
+i_value[6] => mux2to1_1bit:mux2to1_6.i_0
+i_value[7] => mux2to1_1bit:mux2to1_7.i_0
+i_value[8] => ~NO_FANOUT~
+o_value[0] <= enardFF_2:dFF0.o_q
+o_value[1] <= enardFF_2:dFF1.o_q
+o_value[2] <= enardFF_2:dFF2.o_q
+o_value[3] <= enardFF_2:dFF3.o_q
+o_value[4] <= enardFF_2:dFF4.o_q
+o_value[5] <= enardFF_2:dFF5.o_q
+o_value[6] <= enardFF_2:dFF6.o_q
+o_value[7] <= enardFF_2:dFF7.o_q
+o_value[8] <= enardFF_2:dFF8.o_q
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_8
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF8
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_7
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|mux2to1_1bit:mux2to1_0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantBReg|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp
+i_signA => i_enable.IN0
+i_signA => i_enable.IN1
+i_signA => mux2to1_10bit:select_out.i_0[9]
+i_signA => invert_carry[9].IN1
+i_signB => i_enable.IN1
+i_Value[0] => mux2to1_10bit:select_out.i_0[0]
+i_Value[0] => carry[5].IN1
+i_Value[0] => carry[9].IN1
+i_Value[0] => mux2to1_10bit:select_out.i_1[0]
+i_Value[0] => invert_carry[1].IN0
+i_Value[0] => carry[2].IN0
+i_Value[1] => mux2to1_10bit:select_out.i_0[1]
+i_Value[1] => invert_carry[1].IN1
+i_Value[1] => carry[2].IN1
+i_Value[1] => carry[6].IN1
+i_Value[2] => mux2to1_10bit:select_out.i_0[2]
+i_Value[2] => invert_carry[2].IN1
+i_Value[2] => carry[3].IN1
+i_Value[2] => carry[7].IN1
+i_Value[3] => mux2to1_10bit:select_out.i_0[3]
+i_Value[3] => invert_carry[3].IN1
+i_Value[3] => carry[4].IN1
+i_Value[3] => carry[8].IN1
+i_Value[4] => mux2to1_10bit:select_out.i_0[4]
+i_Value[4] => invert_carry[4].IN1
+i_Value[5] => mux2to1_10bit:select_out.i_0[5]
+i_Value[5] => invert_carry[5].IN1
+i_Value[6] => mux2to1_10bit:select_out.i_0[6]
+i_Value[6] => invert_carry[6].IN1
+i_Value[7] => mux2to1_10bit:select_out.i_0[7]
+i_Value[7] => invert_carry[7].IN1
+i_Value[8] => mux2to1_10bit:select_out.i_0[8]
+i_Value[8] => invert_carry[8].IN1
+o_Value[0] <= mux2to1_10bit:select_out.o_y[0]
+o_Value[1] <= mux2to1_10bit:select_out.o_y[1]
+o_Value[2] <= mux2to1_10bit:select_out.o_y[2]
+o_Value[3] <= mux2to1_10bit:select_out.o_y[3]
+o_Value[4] <= mux2to1_10bit:select_out.o_y[4]
+o_Value[5] <= mux2to1_10bit:select_out.o_y[5]
+o_Value[6] <= mux2to1_10bit:select_out.o_y[6]
+o_Value[7] <= mux2to1_10bit:select_out.o_y[7]
+o_Value[8] <= mux2to1_10bit:select_out.o_y[8]
+o_Value[9] <= mux2to1_10bit:select_out.o_y[9]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out
+i_0[0] => mux2to1_1bit:mux0.i_0
+i_0[1] => mux2to1_1bit:mux1.i_0
+i_0[2] => mux2to1_1bit:mux2.i_0
+i_0[3] => mux2to1_1bit:mux3.i_0
+i_0[4] => mux2to1_1bit:mux4.i_0
+i_0[5] => mux2to1_1bit:mux5.i_0
+i_0[6] => mux2to1_1bit:mux6.i_0
+i_0[7] => mux2to1_1bit:mux7.i_0
+i_0[8] => mux2to1_1bit:mux8.i_0
+i_0[9] => mux2to1_1bit:mux9.i_0
+i_1[0] => mux2to1_1bit:mux0.i_1
+i_1[1] => mux2to1_1bit:mux1.i_1
+i_1[2] => mux2to1_1bit:mux2.i_1
+i_1[3] => mux2to1_1bit:mux3.i_1
+i_1[4] => mux2to1_1bit:mux4.i_1
+i_1[5] => mux2to1_1bit:mux5.i_1
+i_1[6] => mux2to1_1bit:mux6.i_1
+i_1[7] => mux2to1_1bit:mux7.i_1
+i_1[8] => mux2to1_1bit:mux8.i_1
+i_1[9] => mux2to1_1bit:mux9.i_1
+i_sel => mux2to1_1bit:mux0.i_sel
+i_sel => mux2to1_1bit:mux1.i_sel
+i_sel => mux2to1_1bit:mux2.i_sel
+i_sel => mux2to1_1bit:mux3.i_sel
+i_sel => mux2to1_1bit:mux4.i_sel
+i_sel => mux2to1_1bit:mux5.i_sel
+i_sel => mux2to1_1bit:mux6.i_sel
+i_sel => mux2to1_1bit:mux7.i_sel
+i_sel => mux2to1_1bit:mux8.i_sel
+i_sel => mux2to1_1bit:mux9.i_sel
+o_y[0] <= mux2to1_1bit:mux0.o_y
+o_y[1] <= mux2to1_1bit:mux1.o_y
+o_y[2] <= mux2to1_1bit:mux2.o_y
+o_y[3] <= mux2to1_1bit:mux3.o_y
+o_y[4] <= mux2to1_1bit:mux4.o_y
+o_y[5] <= mux2to1_1bit:mux5.o_y
+o_y[6] <= mux2to1_1bit:mux6.o_y
+o_y[7] <= mux2to1_1bit:mux7.o_y
+o_y[8] <= mux2to1_1bit:mux8.o_y
+o_y[9] <= mux2to1_1bit:mux9.o_y
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux7
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux8
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_A:mantAComp|mux2to1_10bit:select_out|mux2to1_1bit:mux9
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp
+i_signA => i_enable.IN0
+i_signB => i_enable.IN1
+i_signB => i_enable.IN1
+i_signB => mux2to1_10bit:select_out.i_0[9]
+i_signB => invert_carry[9].IN1
+i_Value[0] => mux2to1_10bit:select_out.i_0[0]
+i_Value[0] => carry[5].IN1
+i_Value[0] => carry[9].IN1
+i_Value[0] => mux2to1_10bit:select_out.i_1[0]
+i_Value[0] => invert_carry[1].IN0
+i_Value[0] => carry[2].IN0
+i_Value[1] => mux2to1_10bit:select_out.i_0[1]
+i_Value[1] => invert_carry[1].IN1
+i_Value[1] => carry[2].IN1
+i_Value[1] => carry[6].IN1
+i_Value[2] => mux2to1_10bit:select_out.i_0[2]
+i_Value[2] => invert_carry[2].IN1
+i_Value[2] => carry[3].IN1
+i_Value[2] => carry[7].IN1
+i_Value[3] => mux2to1_10bit:select_out.i_0[3]
+i_Value[3] => invert_carry[3].IN1
+i_Value[3] => carry[4].IN1
+i_Value[3] => carry[8].IN1
+i_Value[4] => mux2to1_10bit:select_out.i_0[4]
+i_Value[4] => invert_carry[4].IN1
+i_Value[5] => mux2to1_10bit:select_out.i_0[5]
+i_Value[5] => invert_carry[5].IN1
+i_Value[6] => mux2to1_10bit:select_out.i_0[6]
+i_Value[6] => invert_carry[6].IN1
+i_Value[7] => mux2to1_10bit:select_out.i_0[7]
+i_Value[7] => invert_carry[7].IN1
+i_Value[8] => mux2to1_10bit:select_out.i_0[8]
+i_Value[8] => invert_carry[8].IN1
+o_Value[0] <= mux2to1_10bit:select_out.o_y[0]
+o_Value[1] <= mux2to1_10bit:select_out.o_y[1]
+o_Value[2] <= mux2to1_10bit:select_out.o_y[2]
+o_Value[3] <= mux2to1_10bit:select_out.o_y[3]
+o_Value[4] <= mux2to1_10bit:select_out.o_y[4]
+o_Value[5] <= mux2to1_10bit:select_out.o_y[5]
+o_Value[6] <= mux2to1_10bit:select_out.o_y[6]
+o_Value[7] <= mux2to1_10bit:select_out.o_y[7]
+o_Value[8] <= mux2to1_10bit:select_out.o_y[8]
+o_Value[9] <= mux2to1_10bit:select_out.o_y[9]
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out
+i_0[0] => mux2to1_1bit:mux0.i_0
+i_0[1] => mux2to1_1bit:mux1.i_0
+i_0[2] => mux2to1_1bit:mux2.i_0
+i_0[3] => mux2to1_1bit:mux3.i_0
+i_0[4] => mux2to1_1bit:mux4.i_0
+i_0[5] => mux2to1_1bit:mux5.i_0
+i_0[6] => mux2to1_1bit:mux6.i_0
+i_0[7] => mux2to1_1bit:mux7.i_0
+i_0[8] => mux2to1_1bit:mux8.i_0
+i_0[9] => mux2to1_1bit:mux9.i_0
+i_1[0] => mux2to1_1bit:mux0.i_1
+i_1[1] => mux2to1_1bit:mux1.i_1
+i_1[2] => mux2to1_1bit:mux2.i_1
+i_1[3] => mux2to1_1bit:mux3.i_1
+i_1[4] => mux2to1_1bit:mux4.i_1
+i_1[5] => mux2to1_1bit:mux5.i_1
+i_1[6] => mux2to1_1bit:mux6.i_1
+i_1[7] => mux2to1_1bit:mux7.i_1
+i_1[8] => mux2to1_1bit:mux8.i_1
+i_1[9] => mux2to1_1bit:mux9.i_1
+i_sel => mux2to1_1bit:mux0.i_sel
+i_sel => mux2to1_1bit:mux1.i_sel
+i_sel => mux2to1_1bit:mux2.i_sel
+i_sel => mux2to1_1bit:mux3.i_sel
+i_sel => mux2to1_1bit:mux4.i_sel
+i_sel => mux2to1_1bit:mux5.i_sel
+i_sel => mux2to1_1bit:mux6.i_sel
+i_sel => mux2to1_1bit:mux7.i_sel
+i_sel => mux2to1_1bit:mux8.i_sel
+i_sel => mux2to1_1bit:mux9.i_sel
+o_y[0] <= mux2to1_1bit:mux0.o_y
+o_y[1] <= mux2to1_1bit:mux1.o_y
+o_y[2] <= mux2to1_1bit:mux2.o_y
+o_y[3] <= mux2to1_1bit:mux3.o_y
+o_y[4] <= mux2to1_1bit:mux4.o_y
+o_y[5] <= mux2to1_1bit:mux5.o_y
+o_y[6] <= mux2to1_1bit:mux6.o_y
+o_y[7] <= mux2to1_1bit:mux7.o_y
+o_y[8] <= mux2to1_1bit:mux8.o_y
+o_y[9] <= mux2to1_1bit:mux9.o_y
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux7
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux8
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|twosComp10Bit_B:mantBComp|mux2to1_10bit:select_out|mux2to1_1bit:mux9
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|tenBitAdder:mantAdder
+i_a[0] => o_Value.IN0
+i_a[0] => carry.IN0
+i_a[0] => carry.IN0
+i_a[1] => o_Value.IN0
+i_a[1] => carry.IN0
+i_a[1] => carry.IN1
+i_a[2] => o_Value.IN0
+i_a[2] => carry.IN0
+i_a[2] => carry.IN1
+i_a[3] => o_Value.IN0
+i_a[3] => carry.IN0
+i_a[3] => carry.IN1
+i_a[4] => o_Value.IN0
+i_a[4] => carry.IN0
+i_a[4] => carry.IN1
+i_a[5] => o_Value.IN0
+i_a[5] => carry.IN0
+i_a[5] => carry.IN1
+i_a[6] => o_Value.IN0
+i_a[6] => carry.IN0
+i_a[6] => carry.IN1
+i_a[7] => o_Value.IN0
+i_a[7] => carry.IN0
+i_a[7] => carry.IN1
+i_a[8] => o_Value.IN0
+i_a[8] => carry.IN0
+i_a[8] => carry.IN1
+i_a[9] => carry.IN0
+i_a[9] => carry.IN1
+i_b[0] => o_Value.IN1
+i_b[0] => carry.IN1
+i_b[0] => carry.IN0
+i_b[1] => o_Value.IN1
+i_b[1] => carry.IN1
+i_b[1] => carry.IN1
+i_b[2] => o_Value.IN1
+i_b[2] => carry.IN1
+i_b[2] => carry.IN1
+i_b[3] => o_Value.IN1
+i_b[3] => carry.IN1
+i_b[3] => carry.IN1
+i_b[4] => o_Value.IN1
+i_b[4] => carry.IN1
+i_b[4] => carry.IN1
+i_b[5] => o_Value.IN1
+i_b[5] => carry.IN1
+i_b[5] => carry.IN1
+i_b[6] => o_Value.IN1
+i_b[6] => carry.IN1
+i_b[6] => carry.IN1
+i_b[7] => o_Value.IN1
+i_b[7] => carry.IN1
+i_b[7] => carry.IN1
+i_b[8] => o_Value.IN1
+i_b[8] => carry.IN1
+i_b[8] => carry.IN1
+i_b[9] => carry.IN1
+i_b[9] => carry.IN1
+i_cin => o_Value.IN1
+i_cin => carry.IN1
+i_cin => carry.IN1
+o_cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+o_overflow <= o_overflow.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[0] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[1] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[2] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[3] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[4] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[5] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[6] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[7] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+o_Value[8] <= o_Value.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_reset => comb.IN0
+i_clock => enardFF_2:dFF8.i_clock
+i_clock => enardFF_2:dFF7.i_clock
+i_clock => enardFF_2:dFF6.i_clock
+i_clock => enardFF_2:dFF5.i_clock
+i_clock => enardFF_2:dFF4.i_clock
+i_clock => enardFF_2:dFF3.i_clock
+i_clock => enardFF_2:dFF2.i_clock
+i_clock => enardFF_2:dFF1.i_clock
+i_clock => enardFF_2:dFF0.i_clock
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => comb.IN0
+i_shiftRight => mux2to1_1bit:mux2to1_8.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_7.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_6.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_5.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_4.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_3.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_2.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_1.i_sel
+i_shiftRight => mux2to1_1bit:mux2to1_0.i_sel
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_load => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_clear => comb.IN1
+i_value[0] => mux2to1_1bit:mux2to1_0.i_0
+i_value[1] => mux2to1_1bit:mux2to1_1.i_0
+i_value[2] => mux2to1_1bit:mux2to1_2.i_0
+i_value[3] => mux2to1_1bit:mux2to1_3.i_0
+i_value[4] => mux2to1_1bit:mux2to1_4.i_0
+i_value[5] => mux2to1_1bit:mux2to1_5.i_0
+i_value[6] => mux2to1_1bit:mux2to1_6.i_0
+i_value[7] => mux2to1_1bit:mux2to1_7.i_0
+i_value[8] => ~NO_FANOUT~
+o_value[0] <= enardFF_2:dFF0.o_q
+o_value[1] <= enardFF_2:dFF1.o_q
+o_value[2] <= enardFF_2:dFF2.o_q
+o_value[3] <= enardFF_2:dFF3.o_q
+o_value[4] <= enardFF_2:dFF4.o_q
+o_value[5] <= enardFF_2:dFF5.o_q
+o_value[6] <= enardFF_2:dFF6.o_q
+o_value[7] <= enardFF_2:dFF7.o_q
+o_value[8] <= enardFF_2:dFF8.o_q
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_8
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF8
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_7
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_6
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_5
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_4
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_3
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_2
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_1
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|mux2to1_1bit:mux2to1_0
+i_0 => o_y.IN0
+i_1 => o_y.IN0
+i_sel => o_y.IN1
+i_sel => o_y.IN1
+o_y <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Data:Datapath|nineBitShiftRegister:mantSum|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath
+GClock => enardFF_2:dFF0.i_clock
+GClock => enardFF_2:dFF1.i_clock
+GClock => enardFF_2:dFF2.i_clock
+GClock => enardFF_2:dFF3.i_clock
+GClock => enardFF_2:dFF4.i_clock
+GClock => enardFF_2:dFF5.i_clock
+GClock => enardFF_2:dFF6.i_clock
+GClock => enardFF_2:dFF7.i_clock
+GClock => enardFF_2:dFF8.i_clock
+GClock => enardFF_2:dFF9.i_clock
+GReset => enardFF_2:dFF0.i_resetBar
+GReset => enardFF_2:dFF1.i_resetBar
+GReset => enardFF_2:dFF2.i_resetBar
+GReset => enardFF_2:dFF3.i_resetBar
+GReset => enardFF_2:dFF4.i_resetBar
+GReset => enardFF_2:dFF5.i_resetBar
+GReset => enardFF_2:dFF6.i_resetBar
+GReset => enardFF_2:dFF7.i_resetBar
+GReset => enardFF_2:dFF8.i_resetBar
+GReset => enardFF_2:dFF9.i_resetBar
+Sign1 => dS2.IN1
+Sign1 => dS5.IN0
+Sign1 => dS6.IN1
+Sign2 => dS7.IN1
+Zero => dS7.IN1
+Zero => dS7.IN1
+Zero => dS7.IN1
+Zero => dS7.IN1
+Zero => dS4.IN1
+Zero => dS4.IN1
+Zero => dS6.IN1
+Zero => dS6.IN1
+notless9 => dS3.IN1
+notless9 => dS5.IN1
+notless9 => dS4.IN1
+notless9 => dS6.IN1
+notless9 => dS7.IN1
+notless9 => dS7.IN1
+CoutFZ => dS8.IN1
+CoutFZ => dS9.IN1
+Load1 <= enardFF_2:dFF0.o_q
+Load2 <= enardFF_2:dFF0.o_q
+Load3 <= enardFF_2:dFF0.o_q
+Load4 <= enardFF_2:dFF0.o_q
+Load5 <= enardFF_2:dFF7.o_q
+Load6 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+Load7 <= enardFF_2:dFF7.o_q
+On2 <= enardFF_2:dFF1.o_q
+Flag_O <= enardFF_2:dFF1.o_q
+On1 <= enardFF_2:dFF2.o_q
+Flag_1 <= enardFF_2:dFF2.o_q
+Clear3 <= enardFF_2:dFF3.o_q
+Shift3 <= enardFF_2:dFF4.o_q
+CountD <= enardFF_2:dFF4.o_q
+Clear4 <= enardFF_2:dFF5.o_q
+Shift4 <= enardFF_2:dFF6.o_q
+Shift5 <= enardFF_2:dFF8.o_q
+CountU <= enardFF_2:dFF8.o_q
+Done <= enardFF_2:dFF9.o_q
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF8
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPAdder_Top|FPAdder_Control:Controlpath|enARdFF_2:dFF9
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA

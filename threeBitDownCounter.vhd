@@ -68,7 +68,7 @@ begin
 		o_q => y(0),
 		o_qBar => yBar(0));
 		
-	o_zero <= (y(0) and not y(1) and not y(2));	
+	o_zero <= (not y(0) and not y(1) and not y(2));	
 	int_next(2) <= ((yBar(2) and yBar(1) and yBar(0)) or (y(2) and y(0)) or (y(2) and y(1)));
 	int_next(1) <= ((yBar(1) and yBar(0)) or (y(1) and y(0)));
 	int_next(0) <= ((yBar(1) and yBar(0)) or (y(1) and yBar(0)));

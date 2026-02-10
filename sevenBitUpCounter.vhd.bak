@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity sevenBitUpCounter is
+	port();
+end entity;
+
+architecture rtl of sevenBitUpCounter is 
+
+begin
+
+end rtl;

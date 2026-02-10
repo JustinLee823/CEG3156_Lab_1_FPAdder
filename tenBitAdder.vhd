@@ -12,11 +12,8 @@ end tenBitAdder;
 architecture rtl of tenBitAdder is
 
 	signal carry : std_logic_vector(10 downto 0);
-	signal sign_a, sign_b : std_logic;
 	
 begin
-	sign_a <= i_a(9);
-	sign_b <= i_b(9);
 	carry(0) <= i_cin;
 	
 	o_Value(0) <= i_a(0) xor i_b(0) xor carry(0);

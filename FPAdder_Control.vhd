@@ -25,7 +25,7 @@ begin
 	
 	--Flip flops
 	dS0 <= '1';
-	dS1 <= '1';
+	dS1 <= qS1;
 	dS2 <= Sign1 and qS1;
 	dS3 <= notless9 and qS2;
 	dS4 <= ((qS2 and not notless9 and not Zero) or (qS4 and not Zero));

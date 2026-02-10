@@ -1,0 +1,55 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity FPAdder_Top is
+port(SignA, SignB : in std_logic; 
+	ExponentA, ExponentB : in std_logic_vector(6 downto 0); 
+	MantissaA, MantissaB : in std_logic_vector(7 downto 0);
+	GClock, GReset : in std_logic;
+	SignOut : out std_logic;
+	ExponentOut : out std_logic_vector(6 downto 0);
+	MantissaOut : out std_logic_vector(7 downto 0));
+end entity;
+
+architecture rtl of FPAdder_Top is
+
+	component FPAdder_Data
+		port(SignA, SignB, GReset, GClock : in std_logic;
+			loadExpoA, loadExpoB, loadMantA, loadMantB, loadSum, shiftMantissaA, shiftMantissaB, shiftMantSum, clearMantA, clearMantB, clearMantSum: in std_logic; --Control Signals
+			load6, load7Up, on1, on2, CountD, CountU, Flag_0, Flag_1 : in std_logic;
+			ExponentA, ExponentB : in std_logic_vector(6 downto 0);
+			MantissaA, MantissaB : in std_logic_vector(8 downto 0);
+			Zero, notless9, Sign2, Sign1, countFz : out std_logic;
+			REz : out std_logic_vector(6 downto 0);
+			RFz : out std_logic_vector(8 downto 0));
+	end component;
+	
+	component FPAdder_Control
+		port(GClock, GReset : in std_logic;
+			Sign1, Sign2, Zero, notless9, CoutFZ : in std_logic; --signals from Data Path
+			Load1, Load2, Load3, Load4, Load5, Load6, Load7, On2, Flag_O, On1, Flag_1, Clear3, Shift3, CountD, Clear4, Shift4, Shift5, CountU, Done : out std_logic ); --signals to Data Path
+	end component;
+	
+	signal ld1, ld2, ld3, ld4, ld5, ld6, ld7 : std_logic; --signals from Control
+	signal int_on1, int_on2, int_countD, int_countU, int_shift3, int_shift4, int_clear3, int_clear4, int_shift5, int_clear5, int_flag0, int_flag1 : std_logic; --signals from Control
+	signal int_zero, int_notless9, int_sign2, int_sign1, int_countFZ : std_logic; --signals from Data
+begin
+	Datapath : FPAdder_Data
+		port map(SignA => SignA, SignB => SignB, ExponentA => ExponentA, ExponentB => ExponentB, MantissaA => MantissaA, MantissaB => MantissaB,
+			GReset => GReset, GClock => GClock,
+			loadExpoA => ld1, loadExpoB => ld2, loadMantA => ld3, loadMantB => ld4, loadSum => ld5, load6 => ld6, load7Up => ld7,
+			on1 => int_on1, on2 => int_on2, CountD => int_countD, CountU => int_countU,
+			shiftMantissaA => int_shift3, shiftMantissaB => int_shift4, clearMantA => int_clear3, clearMantB => int_clear4, shiftMantSum => int_shift5, clearMantSum => int_clear5,
+			Flag_0 => int_flag0, Flag_1 => int_flag1,
+			Zero => int_zero, notless9 => int_notless9, Sign2 => int_sign2, Sign1 => int_sign1, countFz => int_countFZ,
+			REz => ExponentOut,
+			RFz => MantissaOut);
+			
+	Controlpath : FPAdder_Control
+		port map(GClock => GClock, GReset => GReset,
+			Sign1 => int_sign1, Sign2 => int_sign2, Zero => int_zero, notless9 => int_notless9, CoutFZ => int_countFZ,
+			Load1 => ld1, Load2 => ld2, Load3 => ld3, Load4 => ld4, Load5 => ld5, Load6 => ld6, Load7 => ld7,
+			Flag_O => int_flag0, Flag_1 => int_flag1, On2 => int_on2, On1 => int_on1, Clear3 => int_clear3, Shift3 => int_shift3, CountD => int_countD, Clear4 => int_clear4, Shift4 => int_shift4, Shift5 => int_shift5, CountU => int_countU, Done => open);
+			
+	SignOut <= SignA xor SignB;
+end rtl;
